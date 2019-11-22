@@ -21,7 +21,7 @@ set formatoptions+=j
 " http://goo.gl/qfF9od
 " http://www.vim.org/scripts/script.php?script_id=3361
 let g:indent_guides_guide_size = 1
-setlocal colorcolumn=80
+setlocal colorcolumn=120
 hi ColorColumn ctermbg=lightblue guibg=blue
 
 " https://github.com/matze/vim-move
@@ -103,7 +103,7 @@ let g:no_plugin_maps = 1
 " **************************
 function! SetColorColumn()
     " let col_num = virtcol(".")
-    let col_num = 80
+    let col_num = 120
     let cc_list = split(&cc, ',')
     if count(cc_list, string(col_num)) <= 0
         execute "set cc+=".col_num
