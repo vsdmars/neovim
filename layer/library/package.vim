@@ -1,1 +1,1 @@
-Plug 'kana/vim-operator-user'
+" Plug 'kana/vim-operator-user'
