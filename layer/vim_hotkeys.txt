@@ -1,5 +1,7 @@
 Terminal:
-
+:te
+exit terminal:
+<C-\><C-n>
 
 Git:
 https://github.com/tpope/vim-fugitive/blob/master/doc/fugitive.txt
@@ -79,6 +81,10 @@ Tab //to select the next field to fill in the snippet.
 
 
 Editing:
+C-k // snippet
+
+
+
 ,,w // easy motion
 
 在visual mode下 +,_ 來選擇更大更小的區間。
