@@ -119,8 +119,8 @@ nmap <buffer> <leader>q :lnext<CR>
 nmap <buffer> <leader>z :lprevious<CR>
 nmap <buffer> <leader>a :lclose<CR>
 nmap <buffer> <leader>s :cclose<CR>
-nmap <silent> <A-k> <Plug>(ale_previous_wrap)
-nmap <silent> <A-j> <Plug>(ale_next_wrap)
+" nmap <silent> <m-k> <Plug>(ale_previous_wrap)
+" nmap <silent> <m-j> <Plug>(ale_next_wrap)
 " map <leader>g :call IncludeGuard()<CR>
 " ,c generates the copyleft info for c/c++
 " map <leader>gc :call IncludeCR(0)<CR>
