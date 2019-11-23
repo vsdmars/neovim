@@ -225,8 +225,11 @@ nnoremap <leader>7 7gt
 nnoremap <leader>8 8gt
 nnoremap <leader>9 9gt
 nnoremap <leader>0 :tablast<cr>
-nnoremap <silent> <A-Left> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
-nnoremap <silent> <A-Right> :execute 'silent! tabmove ' . tabpagenr()<CR>
+" nnoremap <silent> <A-Left> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
+" nnoremap <silent> <A-Right> :execute 'silent! tabmove ' . tabpagenr()<CR>
+
+nnoremap <silent> <A-Left> :tabm - 1<CR>
+nnoremap <silent> <A-Right> :tabm + 1<CR>
 
 " Go to file in a new tab
 nnoremap gF <C-W>gF
@@ -317,3 +320,9 @@ aug GlobalEditingSettings
     " this will set .git as root director
     " autocmd BufEnter * call s:setcwd()
 aug end
+
+" make FZF respect gitignore if `ag` is installed
+" you will obviously need to install `ag` for this to work
+if (executable('ag'))
+    let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -g ""'
+endif
