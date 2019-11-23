@@ -48,6 +48,7 @@ Plug 'vim-scripts/BufOnly.vim'
 Plug 'rbgrouleff/bclose.vim'
 
 
+
 " **************************
 " Editing related
 " **************************
@@ -57,6 +58,7 @@ Plug 'bogado/file-line'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'Shougo/neosnippet.vim'
 
 
 

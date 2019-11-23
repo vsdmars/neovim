@@ -43,9 +43,16 @@ let g:go_metalinter_autosave = 0
 " let g:go_metalinter_deadline = "15s"
 let g:go_updatetime = 750
 
+" godoc related
+let g:go_doc_popup_window = 1
+let g:go_doc_max_height = 20
+
+" annotation related
+let g:go_addtags_transform = "camelcase"
+
 " gopls related setttings
-let g:go_info_mode = 'gopls'
 let g:go_def_mode = 'gopls'
+let g:go_info_mode = 'gopls'
 let g:go_referrers_mode = 'gopls'
 let g:go_gorename_command = 'gorename'
 let g:go_gopls_complete_unimported = 1
