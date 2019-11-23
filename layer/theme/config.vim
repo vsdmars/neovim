@@ -21,7 +21,7 @@ hi CursorLine guibg=#003853 ctermbg=273 gui=none cterm=none
 " Highlight boundary
 " Show overlength line in different color.
 highlight OverLength ctermbg=red ctermfg=white guibg=red guifg=white
-match OverLength /\%81v.\+/
+match OverLength /\%121v.\+/
 
 " Color conceal characters nicely
 hi Conceal guifg=green ctermfg=green
