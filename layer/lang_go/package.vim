@@ -8,4 +8,7 @@ Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'AndrewRadev/splitjoin.vim'
 
 " https://github.com/jodosha/vim-godebug
-Plug 'jodosha/vim-godebug'
+" Plug 'jodosha/vim-godebug'
+
+" https://github.com/sebdah/vim-delve
+Plug 'sebdah/vim-delve'
