@@ -50,6 +50,9 @@ let g:go_doc_max_height = 20
 " annotation related
 let g:go_addtags_transform = "camelcase"
 
+" snippet related
+let g:go_snippet_engine = "neosnippet"
+
 " gopls related setttings
 let g:go_def_mode = 'gopls'
 let g:go_info_mode = 'gopls'
