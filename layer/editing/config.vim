@@ -3,17 +3,20 @@
 " **************************
 set autoindent smartindent
 set backspace=indent,eol,start
-" set diffopt+=internal,algorithm:patience
 set nomodeline
+
 " Work nicely with the system clipboard
 " set clipboard=unnamedplus
 " Number formats, for incrementing
 set nrformats=alpha,octal,hex
+
 " Use a short timeout for incomplete mappings
 set ttimeout
 set ttimeoutlen=100
+
 " Highlight the current line
 set cursorline
+
 " Delete comment character(s) when joining commented lines
 set formatoptions+=j
 
@@ -86,7 +89,7 @@ set viewoptions=cursor,folds,slash,unix
 " https://github.com/ntpeters/vim-better-whitespace
 let g:better_whitespace_ctermcolor = 'red'
 let g:better_whitespace_enabled = 1
-" let ale plug in do this
+" let ale plugin do the trim
 let g:strip_whitespace_on_save = 0
 
 " https://github.com/scrooloose/nerdtree
@@ -192,13 +195,13 @@ command! Wqa wqa
 noremap <leader>ch :call SetColorColumn()<CR>
 " --- move around splits
 " move to and maximize the below split
-noremap <C-J> <C-W>j<C-W>_
+" noremap <C-J> <C-W>j<C-W>_
 " move to and maximize the above split
-noremap <C-K> <C-W>k<C-W>_
+" noremap <C-K> <C-W>k<C-W>_
 " move to and maximize the left split
-nmap <c-h> <c-w>h<c-w><bar>
+" nmap <c-h> <c-w>h<c-w><bar>
 " move to and maximize the right split
-nmap <c-l> <c-w>l<c-w><bar>
+" nmap <c-l> <c-w>l<c-w><bar>
 " set wmw=0 " set the min width of a window to 0 so we can maximize others
 " set wmh=0 " set the min height of a window to 0 so we can maximize others
 
@@ -326,3 +329,29 @@ aug end
 if (executable('ag'))
     let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -g ""'
 endif
+
+
+" **************************
+" Snippet Setting
+" **************************
+" Plugin key-mappings.
+" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
+
+" SuperTab like snippets behavior.
+" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
+"imap <expr><TAB>
+" \ pumvisible() ? "\<C-n>" :
+" \ neosnippet#expandable_or_jumpable() ?
+" \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+
+" For conceal markers.
+if has('conceal')
+  set conceallevel=2 concealcursor=niv
+endif
+" Tell Neosnippet about the other snippets
+let g:neosnippet#snippets_directory='~/.config/nvim/plugged/vim-snippets/snippets'
