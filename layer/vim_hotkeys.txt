@@ -2,6 +2,12 @@ Terminal:
 :te
 exit terminal:
 <C-\><C-n>
+Neovim has support for terminal emulator so that you can directly run a shell inside Neovim. It is handy for temporary shell operations.
+To open the terminal, use :terminal or :vnew term://bash or new term://bash. After entering the terminal, you are in normal mode. Press i to start typing terminal command.
+To exit insert mode in terminal emulator, press <Ctrl+\><Ctrl+N>.
+To exit terminal emulator and close the window, use exit.
+
+
 
 Git:
 https://github.com/tpope/vim-fugitive/blob/master/doc/fugitive.txt
