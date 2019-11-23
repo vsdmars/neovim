@@ -1,0 +1,168 @@
+Terminal:
+
+
+Git:
+https://github.com/tpope/vim-fugitive/blob/master/doc/fugitive.txt
+:Git {args} 
+:G {args}    // to git tree root first
+:Git // status
+:Git commit [args]  
+:Gcommit [args]  
+:Git revert [args]  
+:Git merge [args]
+:Git pull [args] 
+:Git rebase [args]  
+:Git push [args]  
+:Git fetch [args] 
+:Git blame [flags]   
+:Ggrep[!] [args] 
+:Gcd [directory]        |:cd| relative to the repository.
+:Gbrowse    // open up browser to the source
+:Gwrite    // git add
+:Gwrite {path}  
+:Gdiffsplit [object]  
+:Gmove {destination}  
+:Grename {destination}  
+:Gdelete     
+
+
+
+https://github.com/junegunn/gv.vim
+:GV to open commit browser
+:GV! will only list commits that affected the current file
+:GV? fills the location list with the revisions of the current file
+
+
+
+https://github.com/airblade/vim-gitgutter
+:GitGutterDisable
+:GitGutterEnable
+:GitGutterToggle.
+
+
+
+https://github.com/chrisbra/vim-diff-enhanced
+:PatienceDiff
+
+
+
+https://github.com/terryma/vim-multiple-cursors
+使用 C-n 選相同的單字 然後 按'c' 一起修改!
+C-x // skip next match
+C-p // remove current virtual cursor
+A-n // start muticursor and select all matches
+
+
+
+Windows:
+"Max out the height of the current split
+ctrl + w _
+"Max out the width of the current split
+ctrl + w |
+"Normalize all split sizes, which is very handy when resizing terminal
+ctrl + w =
+"Swap top/bottom or left/right split
+Ctrl+W R
+"Break out current window into a new tabview
+Ctrl+W T
+"Close every window in the current tabview but the current one
+Ctrl+W o
+gF // go to file in new tab
+
+
+
+Snippets:
+https://github.com/Shougo/neosnippet.vim
+C-k //  select-and-expand a snippet from the deoplete popup (Use C-n and C-p to select it). C-k can also be used to jump to the next field in the snippet.
+Tab //to select the next field to fill in the snippet.
+
+
+
+Editing:
+,,w // easy motion
+
+在visual mode下 +,_ 來選擇更大更小的區間。
+
+
+gS // to split a one-liner into multiple lines
+gJ // (with the cursor on the first line of a block) to join a block into a single-line statement.
+
+
+https://github.com/triglav/vim-visual-increment
+如果有一個index array, 
+[0]
+[0]
+[0]
+可以v選擇第一個, 然後 C-A 她會自動0,1,2,3..
+
+
+
+$ nvim index.html:20
+:BufOnly 
+:Bclose
+
+
+
+<A-k>   Move current line/selection up
+<A-j>   Move current line/selection down
+<A-h>   Move current character/selection left
+<A-l>   Move current character/selection right
+
+
+
+:FZF // fzf
+:Files
+:GFiles [OPTS]	Git files (git ls-files)
+:GFiles?    // Git files (git status)
+:Commits // git commits
+:Buffers // open buffers
+:Colors // color schemes
+:Ag // ag search
+
+
+
+,cp // :CtrlP  Full path fuzzy file, buffer, mru, tag, ... finder for Vim.
+
+o // create next new line without into insert mode
+
+,ro // set readonly
+
+C-h // show current file name
+
+,f // copy current location into clipboard
+
+,j //GotoJump
+
+
+
+,dd // delete without yank
+,pp // paste without from delete
+Y // current cursor to end yank
+
+
+
+kj // back to normal mode
+jk // back to normal mode
+
+,S // Add/Remove workspace
+
+C-f // Ack!
+,* // count word occurrences in a file
+
+將所有以tab格式化:
+:Tabularize /,
+
+:FormatJson  // format json file
+
+
+
+Folding:
+The following commands are useful to open and close folds:
+zr: reduces fold level throughout the buffer
+zR: opens all folds
+zm: increases fold level throughout the buffer
+zM: folds everything all the way
+za: open a fold your cursor is on
+zA: open a fold your cursor is on recursively
+zc: close a fold your cursor is on
+zC: close a fold your cursor is on recursively
