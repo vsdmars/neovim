@@ -40,4 +40,4 @@ augroup END
 
 " add/remove Go struct tag
 nmap <buffer> <leader>t :GoAddTags<CR>
-nmap <buffer> <leader>u :GoRemoveTagsAddTags<CR>
+nmap <buffer> <leader>u :GoRemoveTags<CR>
