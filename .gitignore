@@ -7,4 +7,4 @@
 /ftplugin
 /view
 /after
-kate-swp
+.*kate-swp
