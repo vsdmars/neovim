@@ -36,3 +36,8 @@ augroup CloseLoclistWindowGroupSetting
     autocmd!
     autocmd QuitPre * if empty(&buftype) | lclose | endif
 augroup END
+
+
+" add/remove Go struct tag
+nmap <buffer> <leader>t :GoAddTags<CR>
+nmap <buffer> <leader>u :GoRemoveTagsAddTags<CR>
