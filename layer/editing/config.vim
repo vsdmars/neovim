@@ -271,11 +271,18 @@ nnoremap <leader>j :call GotoJump()<CR>
 " copy current file location into clipboard
 nnoremap <leader>f :let @+ = expand("%:p")<cr>
 
-" reference: https://www.brianstorti.com/vim-registers/
+" reference: https://stackoverflow.com/questions/11993851/how-to-delete-not-cut-in-vim
 " Delete lines without adding them to the yank stack
-nnoremap <leader>dd "_d
-xnoremap <leader>dd "_d
-xnoremap <leader>pp "_dP
+" the following mappings will produce:
+" d => "delete"
+" leader d => "cut"
+nnoremap x "_x
+nnoremap d "_d
+nnoremap D "_D
+vnoremap d "_d
+nnoremap <leader>d ""d
+nnoremap <leader>D ""D
+vnoremap <leader>d ""d
 
 " yank from current cursor postion to the end
 nnoremap Y y$
