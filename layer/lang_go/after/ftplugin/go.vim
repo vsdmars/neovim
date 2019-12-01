@@ -43,3 +43,11 @@ augroup END
 " add/remove Go struct tag
 nmap <buffer> <leader>t :GoAddTags<CR>
 nmap <buffer> <leader>u :GoRemoveTags<CR>
+
+" mapping related
+nmap <buffer> <leader>q :lnext<CR>
+nmap <buffer> <leader>z :lprevious<CR>
+nmap <buffer> <leader>w :cnext<CR>
+nmap <buffer> <leader>x :cprevious<CR>
+nmap <buffer> <leader>a :lclose<CR>
+nmap <buffer> <leader>s :cclose<CR>

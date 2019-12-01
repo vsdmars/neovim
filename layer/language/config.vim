@@ -117,8 +117,11 @@ endfun
 " **************************
 nmap <buffer> <leader>q :lnext<CR>
 nmap <buffer> <leader>z :lprevious<CR>
+nmap <buffer> <leader>w :cnext<CR>
+nmap <buffer> <leader>x :cprevious<CR>
 nmap <buffer> <leader>a :lclose<CR>
 nmap <buffer> <leader>s :cclose<CR>
+
 " nmap <silent> <m-k> <Plug>(ale_previous_wrap)
 " nmap <silent> <m-j> <Plug>(ale_next_wrap)
 " map <leader>g :call IncludeGuard()<CR>
