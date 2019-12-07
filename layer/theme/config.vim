@@ -76,6 +76,8 @@ augroup FixColorschemeSettings
   au ColorScheme * call FixColorscheme()
 augroup END
 
+
+
 " **************************
 " Lightline setting
 " **************************
@@ -100,3 +102,10 @@ function! LightlineGitBlame() abort
   " return blame
   return winwidth(0) > 120 ? blame : ''
 endfunction
+
+
+
+" **************************
+" coc-git setting
+" **************************
+" https://github.com/neoclide/coc-git
