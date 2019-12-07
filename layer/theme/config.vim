@@ -1,6 +1,7 @@
 " **************************
 " Setting
 " **************************
+set termguicolors
 " must set for showing status bar
 set laststatus=2
 " Set colorscheme and trigger hook
@@ -13,7 +14,7 @@ colorscheme gruvbox
 
 " Modify theme color basic
 hi Visual ctermbg=018 guibg=#003853
-hi CursorLine guibg=#003853 ctermbg=273 gui=none cterm=none
+hi Cursor ctermfg=White ctermbg=Yellow cterm=bold guifg=white guibg=yellow gui=bold
 
 " get rid of extra --insert-- notification
 " set noshowmode
@@ -102,10 +103,3 @@ function! LightlineGitBlame() abort
   " return blame
   return winwidth(0) > 120 ? blame : ''
 endfunction
-
-
-
-" **************************
-" coc-git setting
-" **************************
-" https://github.com/neoclide/coc-git

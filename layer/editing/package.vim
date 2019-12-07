@@ -61,10 +61,10 @@ Plug 'junegunn/fzf.vim'
 
 " https://github.com/Shougo/neosnippet.vim
 " Extra snippet https://github.com/honza/vim-snippets
-Plug 'Shougo/neosnippet.vim'
-Plug 'Shougo/neosnippet-snippets'
+" Plug 'Shougo/neosnippet.vim'
+" Plug 'Shougo/neosnippet-snippets'
 " https://github.com/Shougo/context_filetype.vim
-Plug 'Shougo/context_filetype.vim'
+" Plug 'Shougo/context_filetype.vim'
 Plug 'honza/vim-snippets'
 
 
