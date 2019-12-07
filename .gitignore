@@ -1,5 +1,5 @@
-/bundle
 /.netrwhist
+/bundle
 /verbose
 /dein
 /plugged
@@ -7,4 +7,5 @@
 /ftplugin
 /view
 /after
+/sessions
 .*kate-swp
