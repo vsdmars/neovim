@@ -22,4 +22,4 @@ endfunction
 " **************************
 " Execution
 " **************************
-call SetPythonOptions()
+" call SetPythonOptions()

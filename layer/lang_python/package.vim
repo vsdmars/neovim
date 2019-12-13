@@ -6,3 +6,7 @@ Plug 'fisadev/vim-isort'
 " https://github.com/tmhedberg/SimpylFold
 " Folding
 Plug 'tmhedberg/SimpylFold'
+
+
+" yapf support
+Plug 'google/yapf', { 'rtp': 'plugins/vim', 'for': 'python' }
