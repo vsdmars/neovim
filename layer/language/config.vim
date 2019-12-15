@@ -22,7 +22,7 @@ let g:ale_fixers = {
 \ }
 " Write this in your vimrc file
 let g:ale_lint_on_text_changed = 'always'
-let g:ale_lint_delay = 1000
+let g:ale_lint_delay = 500
 " let g:ale-lint-file
 " You can disable this option too
 " if you don't want linters to run on opening a file
@@ -54,32 +54,6 @@ let g:tagbar_autofocus = 0
 " https://github.com/Yggdroot/indentLine
 let g:indentLine_enabled = 1
 let g:indentLine_fileTypeExclude = ['help', 'nerdtree', 'calendar', 'thumbnail', 'tweetvim']
-
-" https://stackoverflow.com/questions/24100896/vim-go-autocompletion-not-working
-" check who last updated omnifunc(vim-go is responsible for last update the setting):
-" :verbose setlocal omnifunc?
-
-" https://github.com/Shougo/deoplete.nvim
-" let g:deoplete#enable_at_startup = 1
-
-" call deoplete#custom#option('sources', {
-    " \ '_': ['buffer'],
-    " \ 'go': ['vim-go'],
-" \})
-
-" call deoplete#custom#option('omni_patterns', {
-    " \ 'go': '[^. *\t]\.\w*',
-" \})
-
-" call deoplete#custom#option({
-    " \ 'auto_complete': v:true,
-    " \ 'auto_complete_delay': 10,
-    " \ 'camel_case': v:true,
-    " \ 'smart_case': v:true,
-    " \ })
-
-" do not use ale for auto completion due to vim-go uses gopls by default.
-" call deoplete#custom#source('ale', 'dup', v:true)
 
 
 
