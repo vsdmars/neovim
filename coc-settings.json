@@ -4,6 +4,15 @@
       "command": "gopls",
       "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
       "filetypes": ["go"]
-    }
-  }
+    },
+    "clangd": {
+      "command": "clangd",
+      "args": ["--background-index"],
+      "rootPatterns": ["compile_flags.txt", "compile_commands.json", ".vim/", ".git/", ".hg/"],
+      "filetypes": ["c", "cpp", "objc", "objcpp"]
+    },
+  },
+  "suggest.timeout": 500,
+  "suggest.minTriggerInputLength": 2,
+  "suggest.snippetIndicator":  " ->",
 }
