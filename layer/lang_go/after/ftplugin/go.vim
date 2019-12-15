@@ -24,7 +24,7 @@ let b:ale_fixers = ['goimports']
 " let b:ale_go_gometalinter_lint_package = 1
 " let b:ale_linters = ['golangci-lint', 'staticcheck']
 " let b:ale_linters = ['golangci-lint', 'golint', 'nakedret', 'aligncheck', 'structcheck', 'varcheck']
-let b:ale_linters = ['golangci-lint', 'golint', 'gotype', 'staticcheck', 'govet', 'gosimple']
+let b:ale_linters = ['golangci-lint', 'golint', 'gotype', 'staticcheck', 'govet']
 " golangci-ling bug: https://github.com/golangci/golangci-lint/issues/824
 let b:ale_go_golangci_lint_options = '--disable-all -E typecheck'
 " let b:ale_go_golangci_lint_options = '--disable-all -E typecheck -E nakedret -E prealloc -E maligned
