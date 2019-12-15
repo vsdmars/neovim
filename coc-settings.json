@@ -12,6 +12,7 @@
       "filetypes": ["c", "cpp", "objc", "objcpp"]
     },
   },
+  "diagnostic.displayByAle":true,
   "suggest.timeout": 500,
   "suggest.minTriggerInputLength": 2,
   "suggest.snippetIndicator":  " ->",
