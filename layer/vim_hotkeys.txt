@@ -11,27 +11,27 @@ To exit terminal emulator and close the window, use exit.
 
 Git:
 https://github.com/tpope/vim-fugitive/blob/master/doc/fugitive.txt
-:Git {args} 
+:Git {args}
 :G {args}    // to git tree root first
 :Git // status
-:Git commit [args]  
-:Gcommit [args]  
-:Git revert [args]  
+:Git commit [args]
+:Gcommit [args]
+:Git revert [args]
 :Git merge [args]
-:Git pull [args] 
-:Git rebase [args]  
-:Git push [args]  
-:Git fetch [args] 
-:Git blame [flags]   
-:Ggrep[!] [args] 
+:Git pull [args]
+:Git rebase [args]
+:Git push [args]
+:Git fetch [args]
+:Git blame [flags]
+:Ggrep[!] [args]
 :Gcd [directory]        |:cd| relative to the repository.
 :Gbrowse    // open up browser to the source
 :Gwrite    // git add
-:Gwrite {path}  
-:Gdiffsplit [object]  
-:Gmove {destination}  
-:Grename {destination}  
-:Gdelete     
+:Gwrite {path}
+:Gdiffsplit [object]
+:Gmove {destination}
+:Grename {destination}
+:Gdelete
 
 
 
@@ -101,7 +101,7 @@ gJ // (with the cursor on the first line of a block) to join a block into a sing
 
 
 https://github.com/triglav/vim-visual-increment
-如果有一個index array, 
+如果有一個index array,
 [0]
 [0]
 [0]
@@ -110,7 +110,7 @@ https://github.com/triglav/vim-visual-increment
 
 
 $ nvim index.html:20
-:BufOnly 
+:BufOnly
 :Bclose
 
 
