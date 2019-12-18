@@ -32,6 +32,7 @@ let b:ale_go_golangci_lint_options = '--disable-all -E typecheck'
             " \ -E goconst -E dupl -E unconvert -E stylecheck -E goimports'
             " \ -D deadcode -D structcheck'
 let b:ale_go_golangci_lint_package = 1
+let b:ale_go_staticcheck_package = 1
 " let b:ale_linters = ['staticcheck']
 " let b:ale_go_staticcheck_lint_package = 1
 " let b:ale_linters = ['govet']
