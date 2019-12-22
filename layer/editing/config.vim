@@ -280,9 +280,8 @@ nnoremap x "_x
 nnoremap d "_d
 nnoremap D "_D
 vnoremap d "_d
-nnoremap <leader>d ""d
-nnoremap <leader>D ""D
-vnoremap <leader>d ""d
+nnoremap <leader>dd ""d
+nnoremap <leader>DD ""D
 
 " yank from current cursor postion to the end
 nnoremap Y y$
