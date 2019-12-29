@@ -326,8 +326,17 @@ aug GlobalEditingSettings
     autocmd BufEnter * silent! lcd %:p:h
     autocmd BufEnter * if expand("%:p:h") !~ '^/tmp' | silent! lcd %:p:h | endif
     autocmd BufWritePre * :call s:MkNonExDir(expand('<afile>'), +expand('<abuf>'))
-    " this will set .git as root director
+    " this will set .git as root directory
     " autocmd BufEnter * call s:setcwd()
+
+    " https://vimways.org/2019/vim-and-the-working-directory/
+    nnoremap <leader>cd :lcd %:h<CR>
+
+    " Open files located in the same dir in with the current file is edited
+    nnoremap <leader>ew :e <C-R>=expand("%:.:h") . "/"<CR>
+
+    " :pwd => print working directory
+    " getcwd() => get current working directory
 aug end
 
 " make FZF respect gitignore if `ag` is installed
@@ -336,6 +345,17 @@ if (executable('ag'))
     let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -g ""'
 endif
 
+" one tab page per project
+function! OnTabEnter(path)
+  if isdirectory(a:path)
+    let dirname = a:path
+  else
+    let dirname = fnamemodify(a:path, ":h")
+  endif
+  execute "tcd ". dirname
+endfunction
+
+autocmd TabNewEntered * call OnTabEnter(expand("<amatch>"))
 
 
 " **************************
