@@ -13,3 +13,6 @@ Plug 'tmhedberg/SimpylFold'
 
 " https://github.com/Chiel92/vim-autoformat
 Plug 'Chiel92/vim-autoformat'
+
+" https://github.com/Vimjas/vim-python-pep8-indent
+Plug 'Vimjas/vim-python-pep8-indent'

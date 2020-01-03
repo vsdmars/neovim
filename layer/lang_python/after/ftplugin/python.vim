@@ -1,13 +1,3 @@
-setlocal
-    \ tabstop=4
-    \ shiftwidth=4
-    \ softtabstop=4
-    \ textwidth=80
-    \ expandtab
-    \ autoindent
-    \ fileformat=unix
-    \ number
-
 setlocal omnifunc=python3complete#Complete
 
 " gf to open files. replace . with /
@@ -29,4 +19,17 @@ endfunction
 augroup PythonLangSettings
     au!
     au BufWrite *.py :Autoformat
+
+    au BufNewFile,BufRead *.py
+        \ set expandtab       |" replace tabs with spaces
+        \ set autoindent      |" copy indent when starting a new line
+        \ set tabstop=4
+        \ set softtabstop=4
+        \ set shiftwidth=4
+        \ set foldmethod=indent
+        \ set textwidth=120
+        \ set fileformat=unix
+        \ set number
+
+    au BufNewFile,BufRead *.py \
 augroup END

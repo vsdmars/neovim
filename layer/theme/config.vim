@@ -104,7 +104,8 @@ let g:lightline = {
   \   ],
   \ },
   \ 'component_function': {
-  \   'blame': 'LightlineGitBlame',
+  \  'blame': 'LightlineGitBlame',
+  \  'method': 'NearestMethodOrFunction',
   \ }
 \ }
 
