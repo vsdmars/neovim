@@ -25,3 +25,8 @@ endfunction
 " Execution
 " **************************
 " call SetPythonOptions()
+
+augroup PythonLangSettings
+    au!
+    au BufWrite *.py :Autoformat
+augroup END

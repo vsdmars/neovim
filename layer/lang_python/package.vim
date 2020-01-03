@@ -9,4 +9,7 @@ Plug 'tmhedberg/SimpylFold'
 
 
 " yapf support
-Plug 'google/yapf', { 'rtp': 'plugins/vim', 'for': 'python' }
+" Plug 'google/yapf', { 'rtp': 'plugins/vim', 'for': 'python' }
+
+" https://github.com/Chiel92/vim-autoformat
+Plug 'Chiel92/vim-autoformat'
