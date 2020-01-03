@@ -25,7 +25,7 @@ set formatoptions+=j
 " http://www.vim.org/scripts/script.php?script_id=3361
 let g:indent_guides_guide_size = 1
 setlocal colorcolumn=120
-hi ColorColumn ctermbg=lightblue guibg=blue
+" hi ColorColumn ctermbg=lightblue guibg=blue
 
 " https://github.com/matze/vim-move
 let g:move_key_modifier = 'A'

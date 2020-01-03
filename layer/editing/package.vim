@@ -82,6 +82,8 @@ Plug 'tpope/vim-repeat'
 Plug 'triglav/vim-visual-increment'
 " https://github.com/matze/vim-move
 Plug 'matze/vim-move'
+" scrool smoothly
+Plug 'psliwka/vim-smoothie'
 
 
 
@@ -105,3 +107,10 @@ Plug 'mileszs/ack.vim'
 Plug 'thaerkh/vim-workspace'
 " https://github.com/vim-scripts/restore_view.vim
 Plug 'vim-scripts/restore_view.vim'
+
+
+
+" **************************
+" Start related
+" **************************
+Plug 'mhinz/vim-startify'
