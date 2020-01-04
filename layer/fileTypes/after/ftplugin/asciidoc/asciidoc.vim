@@ -1,5 +1,5 @@
 " Force wrapping.
-setlocal textwidth=80
+setlocal textwidth=120
 " Enable spell check for this buffer.
 setlocal spell
 
