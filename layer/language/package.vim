@@ -50,8 +50,6 @@ Plug 'Yggdroot/indentLine'
 " Coding related
 " **************************
 " https://github.com/majutsushi/tagbar
-" Plug 'majutsushi/tagbar'
-" https://github.com/liuchengxu/vista.vim
-Plug 'liuchengxu/vista.vim'
+Plug 'majutsushi/tagbar'
 " type tasklist to show todos'
 Plug 'vim-scripts/TaskList.vim'
