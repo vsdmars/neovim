@@ -72,15 +72,15 @@
                 "enabled": true
               },
               "yapf": {
-                "enabled": false
+                "enabled": true
               }
             }
           }
-        },
-    },
+        }
+    }
   },
   "diagnostic.displayByAle":true,
-  "suggest.timeout": 500,
+  "suggest.timeout": 400,
   "suggest.minTriggerInputLength": 2,
-  "suggest.snippetIndicator":  " ->",
+  "suggest.snippetIndicator":  " ->"
 }

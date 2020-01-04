@@ -32,6 +32,7 @@ endfunction
 
 augroup PythonLangSettings
     au!
-    au BufWrite *.py :Autoformat
+    " au BufWrite *.py :Autoformat
+    au BufWrite *.py :call yapf#YAPF()
 
 augroup END
