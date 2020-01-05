@@ -16,6 +16,13 @@
 
 
 
+" **************************
+" Syntax related
+" **************************
+Plug 'sheerun/vim-polyglot'
+
+
+
 " Use release branch (Recommend)
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
