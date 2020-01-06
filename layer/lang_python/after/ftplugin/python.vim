@@ -12,8 +12,6 @@ setlocal
     \ number
 
 " setlocal textwidth=120
-
-
 " gf to open files. replace . with /
 setlocal includeexpr=substitute(v:fname,'\\.','/','g')
 
@@ -25,16 +23,25 @@ function! SetPythonOptions()
     autocmd FileType python AutoFormatBuffer yapf
 endfunction
 
+
 " **************************
 " Execution
 " **************************
 " call SetPythonOptions()
-
 augroup PythonLangSettings
     au!
     au BufWrite *.py :Autoformat
     " au BufWrite *.py call yapf#YAPF()
     " au BufWrite *.py 0,$call yapf#YAPF()
     " au BufWrite *.py 0,$!yapf
-
 augroup END
+
+
+
+" **************************
+" ALE config
+" **************************
+" Check Python files with flake8 and pylint.
+let b:ale_linters = ['pylint']
+" Fix Python files with autopep8 and yapf.
+let b:ale_fixers = ['autopep8', 'yapf']
