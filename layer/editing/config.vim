@@ -28,7 +28,7 @@ setlocal colorcolumn=120
 " hi ColorColumn ctermbg=lightblue guibg=blue
 
 " https://github.com/matze/vim-move
-let g:move_key_modifier = 'A'
+let g:move_key_modifier = 'C'
 
 " Search while typing
 set incsearch
