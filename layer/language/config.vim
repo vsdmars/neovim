@@ -1,16 +1,36 @@
 " **************************
+" Language pack related
+" **************************
+" sheerun/vim-polyglot
+" --python--
+let g:python_version_2 = 0
+let g:python_highlight_all = 1
+let g:python_highlight_builtins = 1
+let g:python_highlight_exceptions = 1
+let g:python_highlight_string_formatting = 1
+
+
+
+" **************************
 " Setting related
 " **************************
 hi link EasyMotionTarget ErrorMsg
 hi link EasyMotionShade  Comment
+
 set cot-=preview "disable doc preview in omnicomplete
+
 " Complete options (disable preview scratch window)
 set completeopt=menu,menuone,longest
+
 " Limit popup menu height
 set pumheight=10
 
-" https://github.com/dense-analysis/ale#usage-linting
 
+
+" **************************
+" ALE related
+" **************************
+" https://github.com/dense-analysis/ale#usage-linting
 " below setting will enable C-x, C-o completion
 " set omnifunc=ale#completion#OmniFunc
 " set completeopt=menu,menuone,preview,noselect,noinsert
@@ -74,11 +94,11 @@ endfun
 fun! IncludeCR(type)
    if a:type == 0
       let l:guard0 = '/* ******************************'
-      let l:guard1 = ' * Copyleft 2018 Verbalsaint'
+      let l:guard1 = ' * Copyleft 2020 Verbalsaint'
       let l:guard2 = ' * ******************************/'
    elseif a:type == 1
       let l:guard0 = '# ******************************'
-      let l:guard1 = '# Copyleft 2018 Verbalsaint'
+      let l:guard1 = '# Copyleft 2020 Verbalsaint'
       let l:guard2 = '# ******************************'
    endif
    call append(0, guard0)
@@ -91,12 +111,12 @@ endfun
 " **************************
 " Map related
 " **************************
-nmap <buffer> <leader>q :lnext<CR>
-nmap <buffer> <leader>z :lprevious<CR>
-nmap <buffer> <leader>w :cnext<CR>
-nmap <buffer> <leader>x :cprevious<CR>
-nmap <buffer> <leader>a :lclose<CR>
-nmap <buffer> <leader>s :cclose<CR>
+nmap <unique> <buffer> <leader>q :lnext<CR>
+nmap <unique> <buffer> <leader>z :lprevious<CR>
+nmap <unique> <buffer> <leader>w :cnext<CR>
+nmap <unique> <buffer> <leader>x :cprevious<CR>
+nmap <unique> <buffer> <leader>a :lclose<CR>
+nmap <unique> <buffer> <leader>s :cclose<CR>
 
 " nmap <silent> <m-k> <Plug>(ale_previous_wrap)
 " nmap <silent> <m-j> <Plug>(ale_next_wrap)
@@ -105,7 +125,10 @@ nmap <buffer> <leader>s :cclose<CR>
 " map <leader>gc :call IncludeCR(0)<CR>
 " ,cm generates the copyleft info for cmake
 " map <leader>gm :call IncludeCR(1)<CR>
-nnoremap <unique> <F7> <Plug>TaskList
+"
+" <Plug> meaning:
+" https://stackoverflow.com/questions/18546533/execute-plug-commands-in-vim
+nnoremap <unique> <F7> :TaskList<CR>
 nnoremap <unique> <F8> :TagbarToggle<CR>
 
 
@@ -129,27 +152,15 @@ set signcolumn=yes
 
 " Use tab for trigger completion with characters ahead and navigate.
 " Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
+" inoremap <silent><expr> <TAB>
+      " \ pumvisible() ? "\<C-n>" :
+      " \ <SID>check_back_space() ? "\<TAB>" :
+      " \ coc#refresh()
+" inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
 
-" Use <c-space> to trigger completion.
-inoremap <silent><expr> <a-space> coc#refresh()
-
-" Use <cr> to confirm completion, `<C-g>u` means break undo chain at current position.
-" Coc only does snippet and additional edit on confirm.
-inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-" Or use `complete_info` if your vim support it, like:
-" inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
-
+" Use <s-space> to trigger completion.
+inoremap <silent><expr> <s-space> coc#refresh()
 
 " Use `[g` and `]g` to navigate diagnostics
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
@@ -161,9 +172,6 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
-" Use K to show documentation in preview window
-nnoremap <silent> K :call <SID>show_documentation()<CR>
-
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
     execute 'h '.expand('<cword>')
@@ -174,6 +182,9 @@ endfunction
 
 " Highlight symbol under cursor on CursorHold
 autocmd CursorHold * silent call CocActionAsync('highlight')
+
+" Use K to show documentation in preview window
+nnoremap <silent> K :call <SID>show_documentation()<CR>
 
 " Remap for rename current word
 nmap <leader>rn <Plug>(coc-rename)
@@ -287,6 +298,8 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 " Use <cr> to confirm completion
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+" Or use `complete_info` if your vim support it, like:
+" inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
 
 " Causing python autocomplete select off 1 index.
 " inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>"

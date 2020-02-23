@@ -19,11 +19,35 @@
 " **************************
 " Syntax related
 " **************************
+" https://github.com/sheerun/vim-polyglot
+" language syntax pack
+" :Python3Syntax  : switch python3 syntax
 Plug 'sheerun/vim-polyglot'
 
 
-
 " Use release branch (Recommend)
+" K : show code doc
+" ,f : reformat select section
+" ,a : action to the select section
+" ,qf : quick fix current line
+
+" " Using CocList
+" Show all diagnostics
+" nnoremap <silent> <space>a  :<C-u>CocList diagnostics<cr>
+" " Manage extensions
+" nnoremap <silent> <space>e  :<C-u>CocList extensions<cr>
+" " Show commands
+" nnoremap <silent> <space>c  :<C-u>CocList commands<cr>
+" " Find symbol of current document
+" nnoremap <silent> <space>o  :<C-u>CocList outline<cr>
+" " Search workspace symbols
+" nnoremap <silent> <space>s  :<C-u>CocList -I symbols<cr>
+" " Do default action for next item.
+" nnoremap <silent> <space>j  :<C-u>CocNext<CR>
+" " Do default action for previous item.
+" nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
+" " Resume latest coc list
+" nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 
@@ -42,12 +66,15 @@ Plug 'dense-analysis/ale'
 " https://github.com/Raimondi/delimitMate
 " provides automatic closing of quotes
 Plug 'Raimondi/delimitMate'
+
 " https://github.com/terryma/vim-expand-region
-" vim-expand-region
+" Press + to expand the visual selection and _ to shrink it.
 Plug 'terryma/vim-expand-region'
+
 " https://github.com/easymotion/vim-easymotion
 " ,,w
 Plug 'Lokaltog/vim-easymotion'
+
 " https://github.com/Yggdroot/indentLine
 Plug 'Yggdroot/indentLine'
 
@@ -57,6 +84,9 @@ Plug 'Yggdroot/indentLine'
 " Coding related
 " **************************
 " https://github.com/majutsushi/tagbar
+" <F8>
 Plug 'majutsushi/tagbar'
+
 " type tasklist to show todos'
+" <F7>
 Plug 'vim-scripts/TaskList.vim'

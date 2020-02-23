@@ -14,13 +14,18 @@
 " NOTE: start with g<C-n> to match without boundaries (behaves like g* instead of *)
 " visual mode when multiple lines are selected
 " start: <C-n> add virtual cursors on each line
+"
 " You can now change the virtual cursors with normal mode commands.
 " For instance: ciw.
+"
 " command
 " The command MultipleCursorsFind accepts a range and a pattern (regexp), it creates a visual cursor at the end of each match.
 " If no range is passed in, then it defaults to the entire buffer.
+"
 " https://github.com/terryma/vim-multiple-cursors
-" $ vip
+" vip : select current paragraph
+" J : concatenate selected into single line with space as delmiter
+" gJ : group and concatenate into single line without delimiter
 Plug 'terryma/vim-multiple-cursors'
 
 
@@ -53,9 +58,11 @@ Plug 'rbgrouleff/bclose.vim'
 " Editing related
 " **************************
 Plug 'bogado/file-line'
+
 " all trailing whitespace to be highlighted.
 " https://github.com/ntpeters/vim-better-whitespace
 Plug 'ntpeters/vim-better-whitespace'
+
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
@@ -78,10 +85,19 @@ Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 " https://github.com/triglav/vim-visual-increment
-" C-V C-A C-X
+" C-V : select
+" C-A : add value to it
+" 5C-A : add 5 to the value and etc. to it
+" C-X : add letter sequence to it
 Plug 'triglav/vim-visual-increment'
+
 " https://github.com/matze/vim-move
+" <C-k> Move current line/selections up
+" <C-j> Move current line/selections down
+" <C-l> Move current line/selections right
+" <C-h> Move current line/selections left
 Plug 'matze/vim-move'
+
 " scrool smoothly
 Plug 'psliwka/vim-smoothie'
 
@@ -99,13 +115,20 @@ Plug 'mbbill/undotree'
 " Search related
 " **************************
 " https://github.com/ctrlpvim/ctrlp.vim
+" ,cp
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'FelikZ/ctrlp-py-matcher'
+
 " https://github.com/mileszs/ack.vim
+" :Ack
 Plug 'mileszs/ack.vim'
+
 " https://github.com/thaerkh/vim-workspace
+" ,S
 Plug 'thaerkh/vim-workspace'
+
 " https://github.com/vim-scripts/restore_view.vim
+" Automatically restore one file's cursor position and folding information after restart vim.
 Plug 'vim-scripts/restore_view.vim'
 
 
@@ -113,4 +136,5 @@ Plug 'vim-scripts/restore_view.vim'
 " **************************
 " Start related
 " **************************
+" https://github.com/mhinz/vim-startify
 Plug 'mhinz/vim-startify'

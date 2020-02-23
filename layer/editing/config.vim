@@ -305,6 +305,8 @@ sunmap w
 sunmap b
 sunmap e
 sunmap ge
+
+" https://github.com/thaerkh/vim-workspace
 nnoremap <leader>S :ToggleWorkspace<CR>
 
 " https://github.com/mileszs/ack.vim
