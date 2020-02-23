@@ -25,6 +25,12 @@
 Plug 'sheerun/vim-polyglot'
 
 
+" Wiki:
+" https://github.com/neoclide/coc.nvim/wiki
+" https://medium.com/@chemzqm/create-coc-nvim-extension-to-improve-vim-experience-4461df269173
+" edit config:
+" https://github.com/neoclide/coc.nvim/wiki/Using-the-configuration-file
+"
 " Use release branch (Recommend)
 " K : show code doc
 " ,f : reformat select section
@@ -34,20 +40,31 @@ Plug 'sheerun/vim-polyglot'
 " " Using CocList
 " Show all diagnostics
 " nnoremap <silent> <space>a  :<C-u>CocList diagnostics<cr>
+"
 " " Manage extensions
 " nnoremap <silent> <space>e  :<C-u>CocList extensions<cr>
+"
 " " Show commands
 " nnoremap <silent> <space>c  :<C-u>CocList commands<cr>
+"
 " " Find symbol of current document
 " nnoremap <silent> <space>o  :<C-u>CocList outline<cr>
+"
 " " Search workspace symbols
 " nnoremap <silent> <space>s  :<C-u>CocList -I symbols<cr>
+"
 " " Do default action for next item.
 " nnoremap <silent> <space>j  :<C-u>CocNext<CR>
+"
 " " Do default action for previous item.
 " nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
+"
 " " Resume latest coc list
 " nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
+"
+" 插入模式使用 <c-s> 可切换为不同模式。
+"
+" https://github.com/neoclide/coc.nvim
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 
