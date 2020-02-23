@@ -30,7 +30,21 @@ Plug 'sheerun/vim-polyglot'
 " https://medium.com/@chemzqm/create-coc-nvim-extension-to-improve-vim-experience-4461df269173
 " edit config:
 " https://github.com/neoclide/coc.nvim/wiki/Using-the-configuration-file
-"
+" To get the full list checkout the help by
+" :h coc-configuration
+
+" There're two types of user configuration files:
+    " The user configuration is named as coc-settings.json and placed inside the folder $XDG_CONFIG_HOME/nvim or
+    " $HOME/.config/nvim by default（or $HOME/.vim for vim).
+    " Run the command :CocConfig to open your user configuration file.
+
+    " The workspace configuration should be named coc-settings.json and be in the directory .vim.
+    " After a file is opened in vim, this directory is resolved from the parent directories of that file.
+    " Run the command :CocLocalConfig to open your workspace configuration file.
+
+" code complete:
+" https://github.com/neoclide/coc.nvim/wiki/Completion-with-sources
+
 " Use release branch (Recommend)
 " K : show code doc
 " ,f : reformat select section
@@ -63,6 +77,12 @@ Plug 'sheerun/vim-polyglot'
 " nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 "
 " 插入模式使用 <c-s> 可切换为不同模式。
+"
+" Plugins:
+" :CocInstall coc-github-users
+" https://github.com/cb372/coc-github-users
+"
+"
 "
 " https://github.com/neoclide/coc.nvim
 Plug 'neoclide/coc.nvim', {'branch': 'release'}

@@ -44,4 +44,5 @@ augroup END
 " Check Python files with flake8 and pylint.
 let b:ale_linters = ['pylint']
 " Fix Python files with autopep8 and yapf.
-let b:ale_fixers = ['autopep8', 'yapf']
+let b:ale_fixers = ['autopep8', 'yapf', 'add_blank_lines_for_python_control_statements',
+    \ 'black', 'isort', 'remove_trailing_lines', 'trim_whitespace']
