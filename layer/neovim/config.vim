@@ -1,3 +1,6 @@
+" https://github.com/neomake/neomake/issues/473
+let g:neomake_python_python_exe = 'python3'
+
 function! MyOnBattery()
   if has('macunix')
     return match(system('pmset -g batt'), "Now drawing from 'Battery Power'") != -1
