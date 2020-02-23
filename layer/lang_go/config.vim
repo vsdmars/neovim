@@ -2,8 +2,7 @@
 " set updatetime=500
 " set balloondelay=250
 " set signcolumn=number
-"
-" https://github.com/fatih/vim-go-tutorial
+
 let g:go_auto_sameids = 1
 let g:go_auto_type_info = 1
 let g:go_def_reuse_buffer = 1

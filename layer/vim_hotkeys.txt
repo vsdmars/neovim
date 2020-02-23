@@ -78,19 +78,6 @@ Ctrl+W o
 gF // go to file in new tab
 
 
-
-Snippets:
-https://github.com/Shougo/neosnippet.vim
-C-k //  select-and-expand a snippet from the deoplete popup (Use C-n and C-p to select it). C-k can also be used to jump to the next field in the snippet.
-Tab //to select the next field to fill in the snippet.
-
-
-
-Editing:
-C-k // snippet
-
-
-
 ,,w // easy motion
 
 在visual mode下 +,_ 來選擇更大更小的區間。
