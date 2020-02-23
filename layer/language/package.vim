@@ -82,6 +82,9 @@ Plug 'sheerun/vim-polyglot'
 " :CocInstall coc-github-users
 " https://github.com/cb372/coc-github-users
 "
+" :CocInstall coc-snippets
+" https://github.com/neoclide/coc-snippets
+"
 "
 "
 " https://github.com/neoclide/coc.nvim

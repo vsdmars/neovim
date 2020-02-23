@@ -11,14 +11,19 @@
 setlocal noexpandtab
 setlocal number
 
+" https://github.com/fatih/vim-go-tutorial
 " Create *_test window
 command! -bang A call go#alternate#Switch(<bang>0, 'edit')
 command! -bang AV call go#alternate#Switch(<bang>0, 'vsplit')
 command! -bang AS call go#alternate#Switch(<bang>0, 'split')
 command! -bang AT call go#alternate#Switch(<bang>0, 'tabe')
 
-let b:ale_fixers = ['goimports']
 
+
+" **************************
+" ALE config
+" **************************
+let b:ale_fixers = ['goimports']
 " let b:ale_linters = ['gometalinter']
 " let b:ale_go_gometalinter_options = '--fast'
 " let b:ale_go_gometalinter_lint_package = 1
@@ -44,8 +49,8 @@ augroup END
 
 
 " add/remove Go struct tag
-nmap <buffer> <leader>t :GoAddTags<CR>
-nmap <buffer> <leader>u :GoRemoveTags<CR>
+nmap <unique> <buffer> <leader>t :GoAddTags<CR>
+nmap <unique> <buffer> <leader>u :GoRemoveTags<CR>
 
 " mapping related
 nmap <buffer> <leader>q :lnext<CR>
