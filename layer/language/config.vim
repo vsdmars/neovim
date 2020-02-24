@@ -129,8 +129,9 @@ nmap <unique> <buffer> <leader>s :cclose<CR>
 "
 " <Plug> meaning:
 " https://stackoverflow.com/questions/18546533/execute-plug-commands-in-vim
-nnoremap <unique> <F7> :TaskList<CR>
-nnoremap <unique> <F8> :TagbarToggle<CR>
+" nnoremap <unique> <F7> :TaskList<CR>
+nnoremap <unique> <silent> <F7> <Plug>TaskList
+nnoremap <unique> <silent> <F8> :TagbarToggle<CR>
 
 
 

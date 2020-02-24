@@ -49,8 +49,8 @@ augroup END
 
 
 " add/remove Go struct tag
-nmap <unique> <buffer> <leader>t :GoAddTags<CR>
-nmap <unique> <buffer> <leader>u :GoRemoveTags<CR>
+nmap <buffer> <leader>t :GoAddTags<CR>
+nmap <buffer> <leader>u :GoRemoveTags<CR>
 
 " mapping related
 nmap <buffer> <leader>q :lnext<CR>
