@@ -10,7 +10,7 @@ let g:go_def_reuse_buffer = 1
 let g:go_fold_enable = ['block', 'import', 'varconst', 'package_comment']
 let g:go_fmt_command = "goimports"
 
-" use ALE to do the format
+" do not use ALE to do the format
 let g:go_fmt_autosave = 0
 
 let g:go_fmt_fail_silently = 0

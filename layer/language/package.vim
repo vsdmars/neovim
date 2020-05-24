@@ -85,7 +85,9 @@ Plug 'sheerun/vim-polyglot'
 " :CocInstall coc-snippets
 " https://github.com/neoclide/coc-snippets
 "
-"
+" :CocInstall coc-tsserver (javascript)
+" https://github.com/neoclide/coc-tsserver
+" https://github.com/neoclide/coc-eslint
 "
 " https://github.com/neoclide/coc.nvim
 Plug 'neoclide/coc.nvim', {'branch': 'release'}

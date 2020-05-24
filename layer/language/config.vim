@@ -2,6 +2,12 @@
 " Language pack related
 " **************************
 " sheerun/vim-polyglot
+
+let g:polyglot_disabled = ['go']
+
+" --javascript--
+let g:javascript_plugin_flow = 1
+
 " --python--
 let g:python_version_2 = 0
 let g:python_highlight_all = 1
@@ -42,7 +48,8 @@ let g:ale_fixers = {
 \ }
 
 " Write this in your vimrc file
-let g:ale_lint_on_text_changed = 'always'
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_insert_leave = 0
 let g:ale_lint_delay = 500
 " let g:ale-lint-file
 " You can disable this option too
@@ -67,6 +74,9 @@ let g:ale_linters_explicit = 1
 let g:ale_sign_error = '✗ '
 let g:ale_sign_warning = '⚠ '
 let g:ale_sign_priority = 100
+
+nmap <silent> [c <Plug>(ale_previous_wrap)
+nmap <silent> ]c <Plug>(ale_next_wrap)
 
 " https://github.com/majutsushi/tagbar
 " set focus to TagBar when opening it
@@ -119,8 +129,6 @@ nmap <unique> <buffer> <leader>x :cprevious<CR>
 nmap <unique> <buffer> <leader>a :lclose<CR>
 nmap <unique> <buffer> <leader>s :cclose<CR>
 
-" nmap <silent> <m-k> <Plug>(ale_previous_wrap)
-" nmap <silent> <m-j> <Plug>(ale_next_wrap)
 " map <leader>g :call IncludeGuard()<CR>
 " ,c generates the copyleft info for c/c++
 " map <leader>gc :call IncludeCR(0)<CR>
@@ -152,17 +160,6 @@ set shortmess+=c
 " always show signcolumns
 set signcolumn=yes
 
-" Use tab for trigger completion with characters ahead and navigate.
-" Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
-" inoremap <silent><expr> <TAB>
-      " \ pumvisible() ? "\<C-n>" :
-      " \ <SID>check_back_space() ? "\<TAB>" :
-      " \ coc#refresh()
-" inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-
-
-" Use <s-space> to trigger completion.
-inoremap <silent><expr> <s-space> coc#refresh()
 
 " Use `[g` and `]g` to navigate diagnostics
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
@@ -262,6 +259,41 @@ endfunction
 call SetupCommandAbbrs('C', 'CocConfig')
 
 
+
+" **************************
+" coc auto completion setting
+" **************************
+" auto completion: https://github.com/neoclide/coc.nvim/wiki/Completion-with-sources
+
+" Use <Tab> or custom key for trigger completion
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+inoremap <silent><expr> <Tab>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<Tab>" :
+      \ coc#refresh()
+
+" Use <Tab> and <S-Tab> to navigate the completion list:
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
+" Use <cr> to confirm completion
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+
+" To make <cr> select the first completion item and confirm the completion when no item has been selected:
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>"
+
+" To make coc.nvim format your code on <cr>, use keymap:
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+" Close the preview window when completion is done.
+autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
+
+
+
 " **************************
 " coc-git setting
 " **************************
@@ -292,33 +324,6 @@ let g:coc_snippet_prev = '<c-k>'
 " Use <C-j> for both expand and jump (make expand higher priority.)
 imap <C-j> <Plug>(coc-snippets-expand-jump)
 
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? coc#_select_confirm() :
-      \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-
-let g:coc_snippet_next = '<tab>'
-
-" mark this to allow <Tab> automatically expand snippets
-" inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-" inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-
-" Use <cr> to confirm completion
-inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-" Or use `complete_info` if your vim support it, like:
-" inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
-
-" Causing python autocomplete select off 1 index.
-" inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>"
-
-" Close the preview window when completion is done.
-autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
 
 
 

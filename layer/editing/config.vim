@@ -341,12 +341,6 @@ aug GlobalEditingSettings
     " getcwd() => get current working directory
 aug end
 
-" make FZF respect gitignore if `ag` is installed
-" you will obviously need to install `ag` for this to work
-if (executable('ag'))
-    let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -g ""'
-endif
-
 " one tab page per project
 function! OnTabEnter(path)
   if isdirectory(a:path)
@@ -358,6 +352,18 @@ function! OnTabEnter(path)
 endfunction
 
 autocmd TabNewEntered * call OnTabEnter(expand("<amatch>"))
+
+
+
+" **************************
+" FZF Setting
+" **************************
+" make FZF respect gitignore if `ag` is installed
+" you will obviously need to install `ag` for this to work
+if (executable('ag'))
+    let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -g ""'
+endif
+
 
 
 " **************************
