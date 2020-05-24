@@ -364,6 +364,10 @@ if (executable('ag'))
     let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -g ""'
 endif
 
+nnoremap <C-p> :Files<CR>
+" nnoremap <Leader>b :Buffers<CR>
+" nnoremap <Leader>h :History<CR>
+
 
 
 " **************************
