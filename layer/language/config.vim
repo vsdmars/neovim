@@ -295,6 +295,14 @@ autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
 
 
 " **************************
+" coc-prettier setting
+" **************************
+" https://github.com/neoclide/coc-prettier
+command! -nargs=0 Pj :CocCommand prettier.formatFile
+
+
+
+" **************************
 " coc-git setting
 " **************************
 " https://github.com/neoclide/coc-git

@@ -11,17 +11,13 @@ hi SpellBad cterm=underline
 
 augroup TxtRelatedSettings
     autocmd!
-    autocmd BufNewFile,BufRead *.txt,*.doc setlocal spell spelllang=en_us
+    autocmd BufNewFile,BufRead *.txt,*.doc set spell spelllang=en_us
 augroup END
 
 
 augroup OtherLangRelatedSettings
     autocmd!
-    au BufNewFile,BufRead *.js, *.html, *.css
-        \ tabstop=2
-        \ softtabstop=2
-        \ shiftwidth=2
-        \ number
+    au BufNewFile,BufRead *.js,*.html,*.css set tabstop=4 softtabstop=4 shiftwidth=4 number
 augroup END
 
 
