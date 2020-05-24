@@ -16,14 +16,12 @@ setlocal number
 let b:ale_fixers = ['eslint']
 let b:ale_linters = ['eslint']
 
-
-
-
 augroup CloseLoclistWindowGroupSetting
     autocmd!
     autocmd QuitPre * if empty(&buftype) | lclose | endif
 augroup END
 
+au BufNewFile,BufRead *.js set tabstop=2 softtabstop=2 shiftwidth=2 number
 
 " mapping related
 nmap <buffer> <leader>q :lnext<CR>
