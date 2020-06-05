@@ -1,7 +1,7 @@
 let g:rustfmt_autosave = 1
 
 " https://github.com/racer-rust/vim-racer
-" let g:racer_cmd = '/home/user/.cargo/bin/racer'
+let g:racer_cmd = "/home/vsdmars/.cargo/bin/racer"
 
 let g:racer_experimental_completer = 1
 let g:racer_insert_paren = 1
