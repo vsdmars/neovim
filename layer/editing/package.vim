@@ -26,6 +26,8 @@
 " vip : select current paragraph
 " J : concatenate selected into single line with space as delmiter
 " gJ : group and concatenate into single line without delimiter
+"
+" use https://github.com/mg979/vim-visual-multi instead!!
 Plug 'terryma/vim-multiple-cursors'
 
 
