@@ -18,3 +18,10 @@ Plug 'plasticboy/vim-markdown', {
 
 " https://github.com/avakhov/vim-yaml
 Plug 'avakhov/vim-yaml'
+
+" **************************
+" Tmux related
+" **************************
+" https://github.com/tmux-plugins/vim-tmux
+" understand .tmux.conf
+Plug 'tmux-plugins/vim-tmux'

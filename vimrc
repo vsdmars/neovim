@@ -2,8 +2,13 @@
 
 set nocompatible        " not compatible with the old-fashion vi mode
 set hidden              " set buffer hidden
-set exrc
-set secure
+
+set exrc                " beware of potential security issues
+
+" When secure is on, ":autocmd", shell and write commands are not allowed in
+".nvimrc" and ".exrc" in the current directory and map commands are
+" displayed.
+set secure              " go with set exrc
 
 " set leader to ,
 let mapleader=","

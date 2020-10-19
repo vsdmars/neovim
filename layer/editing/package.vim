@@ -59,6 +59,8 @@ Plug 'rbgrouleff/bclose.vim'
 " **************************
 " Editing related
 " **************************
+" enable opening a file in a given line
+" e.g $ vim index.html:20
 Plug 'bogado/file-line'
 
 " all trailing whitespace to be highlighted.
@@ -74,6 +76,9 @@ Plug 'junegunn/fzf.vim'
 " Plug 'Shougo/neosnippet-snippets'
 " https://github.com/Shougo/context_filetype.vim
 " Plug 'Shougo/context_filetype.vim'
+"
+" https://github.com/honza/vim-snippets
+" Contains snippets files for various programming languages.
 Plug 'honza/vim-snippets'
 
 
@@ -83,9 +88,11 @@ Plug 'honza/vim-snippets'
 " **************************
 " https://github.com/bkad/CamelCaseMotion
 Plug 'bkad/camelcasemotion'
+
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
+
 " https://github.com/triglav/vim-visual-increment
 " C-V : select
 " C-A : add value to it

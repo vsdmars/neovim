@@ -27,7 +27,7 @@ call plug#begin('~/.config/nvim/plugged')
       exe "source" s:package
     endif
 
-    " add path to runtime path
+    " Adding every /after sub-dir into 'runtimepath' aka. 'rtp'
     let s:after = l . '/after'
     if !empty(glob(s:after))
         " https://stackoverflow.com/a/35617827
@@ -40,7 +40,6 @@ call plug#end()
 
 
 " Post-processing feature.
-" Adding every /after sub-dir into 'runtimepath' aka. 'rtp'
 for l in layers
     " Load each layer's config
     let s:config = l . '/config.vim'
