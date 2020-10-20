@@ -36,12 +36,14 @@ let b:ale_go_golangci_lint_options = '--disable-all -E typecheck'
 " let b:ale_go_golangci_lint_options = '--disable-all -E typecheck -E nakedret -E prealloc -E maligned
             " \ -E goconst -E dupl -E unconvert -E stylecheck -E goimports'
             " \ -D deadcode -D structcheck'
-let b:ale_go_golangci_lint_package = 1
+let b:ale_go_golangci_lint_package = 1  " When set to `1`, the whole Go package will be checked instead of only the
+                                        " current file.
 let b:ale_go_staticcheck_package = 1
 " let b:ale_linters = ['staticcheck']
 " let b:ale_go_staticcheck_lint_package = 1
 " let b:ale_linters = ['govet']
 
+" https://vimhelp.org/autocmd.txt.html#QuitPre
 augroup CloseLoclistWindowGroupSetting
     autocmd!
     autocmd QuitPre * if empty(&buftype) | lclose | endif

@@ -4,11 +4,17 @@
 " set signcolumn=number
 
 " https://github.com/fatih/vim-go/blob/master/doc/vim-go.txt
-let g:go_auto_sameids = 1
-let g:go_auto_type_info = 1
-let g:go_def_reuse_buffer = 1
-let g:go_fold_enable = ['block', 'import', 'varconst', 'package_comment']
+let g:go_auto_sameids = 1  " highlight all uses of the identifier under the cursor
+let g:go_auto_type_info = 1 " Use this option to show the type info (|:GoInfo|) for the word under the
+                            " cursor automatically.
+let g:go_def_reuse_buffer = 1 " Use this option to jump to an existing buffer for the split, vsplit and tab
+                              " mappings
+                              "
+let g:go_fold_enable = ['block', 'import', 'varconst', 'package_comment']  " Control syntax-based folding which
+                        " takes effect when 'foldmethod' is set to `syntax`.
+                        "
 let g:go_fmt_command = "goimports"
+let g:go_imports_autosave = 1
 
 " do not use ALE to do the format
 let g:go_fmt_autosave = 0
@@ -23,8 +29,10 @@ let g:go_highlight_trailing_whitespace_error = 0
 let g:go_highlight_types = 1
 
 " https://superuser.com/questions/775723/cw-command-in-vim-how-to-avoid-auto-jumping-to-first-error
+" https://vi.stackexchange.com/a/13967
 let g:go_jump_to_error = 1
-let g:go_list_autoclose = 0
+let g:go_list_autoclose = 1  " Specifies whether the quickfix/location list should be closed automatically
+                             " in the absence of errors.
 
 " https://stackoverflow.com/questions/20933836/what-is-the-difference-between-location-list-and-quickfix-list-in-vim
 " quickfix list is global, you can't have more than one available at a time.
@@ -33,6 +41,7 @@ let g:go_list_autoclose = 0
 " Default we use quickfix to show global error message
 let g:go_list_type = "quickfix"
 let g:go_list_type_commands = {
+            \ "GoBuild": "quickfix",
             \ "GoErrCheck": "locationlist",
             \ "GoFmt": "locationlist",
             \ "GoModFmt": "locationlist"}
@@ -59,11 +68,13 @@ let g:go_addtags_transform = "camelcase"
 let g:go_snippet_engine = "neosnippet"
 
 " gopls related setttings
+let g:go_gopls_enabled = 1
 let g:go_def_mode = 'gopls'
 let g:go_info_mode = 'gopls'
 let g:go_referrers_mode = 'gopls'
 let g:go_gorename_command = 'gorename'
 let g:go_gopls_complete_unimported = 1
+let g:go_gopls_gofumpt = 1
 let g:go_gopls_fuzzy_matching = 1
 let g:go_gopls_use_placeholders = 1
 
