@@ -2,8 +2,8 @@
 " Language pack related
 " **************************
 " sheerun/vim-polyglot
-
-let g:polyglot_disabled = ['go']
+" should be defined before package loaded
+" let g:polyglot_disabled = ['go']
 
 " --javascript--
 let g:javascript_plugin_flow = 1

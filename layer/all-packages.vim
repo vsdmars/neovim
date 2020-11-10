@@ -8,6 +8,10 @@ if empty(glob('~/.config/nvim/autoload/plug.vim'))
 endif
 
 
+" defined variables needed before loading packages
+let g:polyglot_disabled = ['go']
+
+
 " create a list of directories under $VIMHOME/layer
 " if directory under layer starts with '_' will not be used.
 " http://learnvimscriptthehardway.stevelosh.com/chapters/19.html
