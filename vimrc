@@ -16,6 +16,8 @@ let g:mapleader=","
 
 let g:hostname = substitute(system('hostname'), "\n", "", "")
 
+let g:python3_host_prog = '/usr/bin/python3'
+
 source $HOME/.config/nvim/layer/all-packages.vim
 
 " https://vi.stackexchange.com/a/10125
