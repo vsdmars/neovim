@@ -11,4 +11,4 @@ let g:autoformat_retab = 0
 let g:autoformat_remove_trailing_spaces = 0
 let g:python3_host_prog = "/usr/bin/python3"
 
-let g:vim_isort_python_version = 'python3'
+" let g:vim_isort_python_version = 'python3'
