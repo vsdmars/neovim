@@ -9,6 +9,6 @@ let g:formatters_python = ['autopep8']
 let g:autoformat_autoindent = 1
 let g:autoformat_retab = 0
 let g:autoformat_remove_trailing_spaces = 0
-let g:python3_host_prog = "/usr/bin/python3"
+let g:python3_host_prog = "python3"
 
 " let g:vim_isort_python_version = 'python3'
