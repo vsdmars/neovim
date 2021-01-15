@@ -39,15 +39,17 @@ set undofile
 "  %    :  saves and restores the buffer list
 "  n... :  where to save the viminfo files
 set viminfo='10,\"100,:20,%,n~/.viminfo
+
 set wildchar=<TAB>      " wild char completion menu
+
 " ignore these files while expanding wild chars
 set wildignore=*.o,*.class,*.pyc,*.out,*.so,*.swp,*.zip
 set wildmenu            " wild char completion menu
 
 " GUI
-set tm=500
-set wmw=0                     " set the min width of a window to 0 so we can maximize others
-set wmh=0                     " set the min height of a window to 0 so we can maximize others
+set tm=500  " Time in milliseconds to wait for a mapped sequence to complete.
+set wmw=0  " set the min width of a window to 0 so we can maximize others
+set wmh=0  " set the min height of a window to 0 so we can maximize others
 
 " don't use arrowkeys
 " noremap <Up> <NOP>

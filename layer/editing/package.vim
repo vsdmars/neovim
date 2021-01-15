@@ -67,6 +67,7 @@ Plug 'bogado/file-line'
 " https://github.com/ntpeters/vim-better-whitespace
 Plug 'ntpeters/vim-better-whitespace'
 
+" https://github.com/junegunn/fzf.vih
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 

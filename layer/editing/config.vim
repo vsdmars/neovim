@@ -301,6 +301,12 @@ map <silent> w <Plug>CamelCaseMotion_w
 map <silent> b <Plug>CamelCaseMotion_b
 map <silent> e <Plug>CamelCaseMotion_e
 map <silent> ge <Plug>CamelCaseMotion_ge
+
+" COMMANDS				      MODES
+"                                           Visual    Select
+" :vmap  :vnoremap  :vunmap  :vmapclear	    yes      yes
+" :xmap  :xnoremap  :xunmap  :xmapclear	    yes       -
+" :smap  :snoremap  :sunmap  :smapclear	    -	     yes
 sunmap w
 sunmap b
 sunmap e

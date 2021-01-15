@@ -9,6 +9,7 @@ endif
 
 
 " defined variables needed before loading packages
+" disable syntax load
 let g:polyglot_disabled = ['go']
 
 

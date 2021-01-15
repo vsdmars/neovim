@@ -145,6 +145,7 @@ nnoremap <unique> <silent> <F8> :TagbarToggle<CR>
 
 " **************************
 " CoC related
+" https://github.com/neoclide/coc.nvim#example-vim-configuration
 " **************************
 set hidden
 

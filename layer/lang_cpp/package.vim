@@ -1,6 +1,5 @@
-Plug 'derekwyatt/vim-fswitch', {
-  \ 'for': ['c', 'cpp'],
-\ }
+" https://github.com/bfrg/vim-cpp-modern
+Plug 'bfrg/vim-cpp-modern'
 
 Plug 'vim-scripts/DoxygenToolkit.vim'
 
