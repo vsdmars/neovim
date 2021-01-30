@@ -180,9 +180,6 @@ function! s:show_documentation()
   endif
 endfunction
 
-" Highlight symbol under cursor on CursorHold
-autocmd CursorHold * silent call CocActionAsync('highlight')
-
 " Use K to show documentation in preview window
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 
@@ -339,4 +336,4 @@ imap <C-j> <Plug>(coc-snippets-expand-jump)
 " **************************
 " coc-highlight
 " **************************
-autocmd CursorHold * silent call CocActionAsync('highlight')
+" autocmd CursorHold * silent call CocActionAsync('highlight')
