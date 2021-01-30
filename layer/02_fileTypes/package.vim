@@ -3,10 +3,6 @@
 " https://github.com/vim-scripts/SyntaxRange
 " Plug 'vim-scripts/SyntaxRange'
 
-" https://github.com/bazelbuild/vim-bazel
-" needs google library
-" Plug 'bazelbuild/vim-bazel'
-
 " https://github.com/godlygeek/tabular
 Plug 'godlygeek/tabular', {
       \ 'for' : ['markdown'],

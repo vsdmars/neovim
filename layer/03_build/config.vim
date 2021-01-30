@@ -1,3 +1,7 @@
+" **************************
+" Setting
+" **************************
+
 " https://github.com/neomake/neomake/issues/473
 let g:neomake_python_python_exe = 'python3'
 
