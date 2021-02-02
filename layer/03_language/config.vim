@@ -5,6 +5,8 @@
 
 " **************************
 " ALE related
+" https://github.com/dense-analysis/ale/blob/master/doc/ale-cpp.txt
+" https://github.com/dense-analysis/ale/blob/master/doc/ale-c.txt
 " **************************
 " https://github.com/dense-analysis/ale#usage-linting
 " below setting will enable C-x, C-o completion
@@ -14,7 +16,12 @@ let g:ale_completion_enabled = 0
 let g:ale_list_window_size = 5
 let g:ale_fix_on_save = 1
 let g:ale_fixers = {
+\   'cpp': ['clang-format'],
 \   '*': ['remove_trailing_lines', 'trim_whitespace']
+\ }
+
+let g:ale_linters = {
+\   'cpp': ['clangtidy']
 \ }
 
 " Write this in your vimrc file
