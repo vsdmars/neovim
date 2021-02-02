@@ -4,6 +4,8 @@
 set autoindent smartindent
 set backspace=indent,eol,start
 set nomodeline
+set foldenable
+
 
 " Work nicely with the system clipboard
 " set clipboard=unnamedplus
@@ -28,6 +30,11 @@ setlocal colorcolumn=120
 " hi ColorColumn ctermbg=lightblue guibg=blue
 
 " https://github.com/matze/vim-move
+" Use g:move_key_modifier to set a custom modifier for key bindings. For example,
+" let g:move_key_modifier = 'C'
+" which will create the following key bindings:
+" <C-k>   Move current line/selections up
+" <C-j>   Move current line/selections down
 let g:move_key_modifier = 'C'
 
 " Search while typing
@@ -41,13 +48,17 @@ set smartcase
 set wildignore+=target,out,build_debug,build_release,build
 set wildignore+=Library,*.csproject,*.meta
 set wildignore+=_site,vendor,node_modules
-set wildignore+=*.o,*.d,*.a,*.c3b,*.ccz,Resource,*.jar,*.strings,*.plist,*.filters
+set wildignore+=*.o,*.d,*.a,*.c3b,*.ccz,Resource,*.class,*.jar,*.strings,*.plist,*.filters
 set wildignore+=*.xcscheme,*.xcworkspacedata,*.xcscmblueprint,*.properties,*.keystore
 set wildignore+=boost_*,googletest,*.proto,protobuf,*.txt,Frameworks,*.framework
 set wildignore+=*.vcxitems,*.xib,*.nib,*.pbxproj,*.xcuserstate,*.props
 set wildignore+=*.apk,*.iml
 set wildignore+=*.ogg,*.wav,*.mp3,*.mid,*.png,*.jpg,*.jpeg
 
+
+" **************************
+" CTRLP settings
+" **************************
 " https://github.com/ctrlpvim/ctrlp.vim
 let g:ctrlp_map = ',cp'
 let g:ctrlp_working_path_mode = 'rw'
@@ -68,6 +79,10 @@ let g:ctrlp_user_command = ['.git', 'cd %s; git ls-files . -co --exclude-standar
 " Keep file cache between sessions
 let g:ctrlp_clear_cache_on_exit = 0
 
+
+" **************************
+" Ack settings
+" **************************
 " https://github.com/mileszs/ack.vim
 let g:ackprg = 'ag --vimgrep'
 " Don't jump to first result
@@ -76,6 +91,11 @@ let g:ackhighlight = 0
 " Disable terminal output of ag as it runs
 set shellpipe=>
 
+
+" **************************
+" Workspace settings
+" **************************
+" https://github.com/mileszs/ack.vim
 " https://github.com/thaerkh/vim-workspace
 let g:workspace_session_name = '.session.vim'
 let g:workspace_undodir = '.vimundo'
@@ -92,14 +112,23 @@ let g:better_whitespace_enabled = 1
 " let ale plugin do the trim
 let g:strip_whitespace_on_save = 0
 
+
+" **************************
+" Nerdtree settings
+" **************************
 " https://github.com/scrooloose/nerdtree
 let g:NERDSpaceDelims = 1
 let g:NERDCompactSexyComs = 1
 let g:NERDTrimTrailingWhitespace = 1
 
+
+" **************************
+" BClose settings
+" **************************
 " https://github.com/rbgrouleff/bclose.vim
 let g:bclose_no_plugin_maps = 1
 let g:no_plugin_maps = 1
+
 
 " **************************
 " Function
@@ -160,7 +189,6 @@ function! s:setcwd()
 endfunction
 
 
-
 " **************************
 " Execution
 " **************************
@@ -170,9 +198,8 @@ if !isdirectory($HOME . "/.vim-undo")
 endif
 
 
-
 " **************************
-" Command
+" Commands Settings
 " **************************
 " Allow opening multiple files at once
 com! -complete=file -nargs=* E silent! exec "!vim --servername "
@@ -186,7 +213,6 @@ command! W w
 command! Wa wa
 command! Wq wq
 command! Wqa wqa
-
 
 
 " **************************
@@ -254,8 +280,9 @@ cnoremap <silent> cd. lcd %:p:h
 " nnoremap <leader>cd :cd %:p:h<CR>:pwd<CR>
 
 " Move to next new line instead of enter insert mode
-noremap <S-Enter> O<Esc>
+noremap <C-Enter> O<Esc>
 noremap <CR> o<Esc>
+
 
 " Show line number
 nnoremap <silent> <leader>N :set number!<CR>
@@ -264,8 +291,9 @@ nnoremap <silent> <leader>N :set number!<CR>
 nnoremap <leader>ro :set ro!<CR>
 
 " Show full path file name
-nnoremap <C-h> :echo expand('%:p')<CR>
+nnoremap <leader>pp :echo expand('%:p')<CR>
 
+" jump to edit location
 nnoremap <leader>j :call GotoJump()<CR>
 
 " copy current file location into clipboard
@@ -360,7 +388,6 @@ endfunction
 autocmd TabNewEntered * call OnTabEnter(expand("<amatch>"))
 
 
-
 " **************************
 " FZF Setting
 " **************************
@@ -373,7 +400,6 @@ endif
 nnoremap <C-p> :Files<CR>
 " nnoremap <Leader>b :Buffers<CR>
 " nnoremap <Leader>h :History<CR>
-
 
 
 " **************************

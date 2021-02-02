@@ -6,22 +6,25 @@ set tabstop=4
 set autoread		    " auto read when file is changed from outside
 set copyindent          " copy the previous indentation on autoindenting
 " set clipboard=unnamed   " yank to the system register (*) by default
-set directory=/tmp
+set directory=/tmp      " set vim swap file resides
 set foldmethod=indent
 set foldlevel=99
 set history=1000
-set hlsearch!            " search highlighting
+set hlsearch!           " search highlighting
 set incsearch           " incremental search
 set ignorecase          " ignore case when searching
-set nobackup            " no *~ backup files
 
 " disable sound on errors
 set noerrorbells
 set novisualbell
+
+" Nvim does not have special t_XX options nor <t_XX> keycodes to configure
+" terminal capabilities. Instead Nvim treats the terminal as any other UI,
+" e.g. 'guicursor' sets the terminal cursor style if possible.
 set t_vb=
 
 set noswapfile
-set nowritebackup
+
 set ruler	        	" show the cursor position all the time
 set showmatch           " Cursor shows matching ) and }
 set showmode            " Show current mode
@@ -43,7 +46,8 @@ set viminfo='10,\"100,:20,%,n~/.viminfo
 set wildchar=<TAB>      " wild char completion menu
 
 " ignore these files while expanding wild chars
-set wildignore=*.o,*.class,*.pyc,*.out,*.so,*.swp,*.zip
+set wildignore=*.o,*.class,*.jar,*.pyc,*.out,*.so,*.swp,*.zip
+
 set wildmenu            " wild char completion menu
 
 " GUI
