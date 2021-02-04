@@ -148,3 +148,11 @@ Plug 'vim-scripts/restore_view.vim'
 " **************************
 " https://github.com/mhinz/vim-startify
 Plug 'mhinz/vim-startify'
+
+
+
+" **************************
+" Mark related
+" **************************
+" https://github.com/kshenoy/vim-signature
+Plug 'kshenoy/vim-signature'

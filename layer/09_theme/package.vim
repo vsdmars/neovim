@@ -1,11 +1,15 @@
 " https://github.com/fatih/molokai
 Plug 'fatih/molokai'
+
 " https://github.com/itchyny/lightline.vim
 Plug 'itchyny/lightline.vim'
+
 " https://github.com/edkolev/promptline.vim
 Plug 'edkolev/promptline.vim'
+
 " https://github.com/luochen1990/rainbow
 Plug 'luochen1990/rainbow'
+
 " https://github.com/morhetz/gruvbox
 Plug 'morhetz/gruvbox'
 
