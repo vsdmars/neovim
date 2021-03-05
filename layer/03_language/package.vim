@@ -92,6 +92,9 @@ Plug 'sheerun/vim-polyglot'
 " Rust:
 " https://github.com/neoclide/coc-rls/
 "
+" GoLang:
+" https://github.com/josa42/coc-go
+"
 " https://github.com/neoclide/coc.nvim
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 

@@ -8,6 +8,7 @@
 " use ! on function! will replace previous function definition.
 " autocmd is about adding commands into a command list, thus it accumulates!
 
+" Go uses tab instead of space
 setlocal noexpandtab
 setlocal number
 
@@ -36,12 +37,27 @@ let b:ale_go_golangci_lint_options = '--disable-all -E typecheck'
 " let b:ale_go_golangci_lint_options = '--disable-all -E typecheck -E nakedret -E prealloc -E maligned
             " \ -E goconst -E dupl -E unconvert -E stylecheck -E goimports'
             " \ -D deadcode -D structcheck'
-let b:ale_go_golangci_lint_package = 1  " When set to `1`, the whole Go package will be checked instead of only the
-                                        " current file.
+
+" When set to `1`, the whole Go package will be checked instead of only the
+" current file.
+let b:ale_go_golangci_lint_package = 1
 let b:ale_go_staticcheck_package = 1
-" let b:ale_linters = ['staticcheck']
-" let b:ale_go_staticcheck_lint_package = 1
-" let b:ale_linters = ['govet']
+
+
+" **************************
+" coc-go config
+" https://github.com/josa42/coc-go
+" **************************
+augroup CocGoSettings
+    au!
+    " Add missing imports on save
+    au BufWritePre *.go :silent call CocAction('runCommand', 'editor.action.organizeImport')
+augroup END
+
+nmap gtj :CocCommand go.tags.add json<cr>
+nmap gty :CocCommand go.tags.add yaml<cr>
+nmap gtx :CocCommand go.tags.clear<cr>
+
 
 " https://vimhelp.org/autocmd.txt.html#QuitPre
 augroup CloseLoclistWindowGroupSetting
@@ -53,6 +69,7 @@ augroup END
 " add/remove Go struct tag
 nmap <buffer> <leader>t :GoAddTags<CR>
 nmap <buffer> <leader>u :GoRemoveTags<CR>
+
 
 " mapping related
 nmap <buffer> <leader>q :lnext<CR>

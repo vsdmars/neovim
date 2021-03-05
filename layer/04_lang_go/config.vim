@@ -4,19 +4,24 @@
 " set signcolumn=number
 
 " https://github.com/fatih/vim-go/blob/master/doc/vim-go.txt
-let g:go_auto_sameids = 1  " highlight all uses of the identifier under the cursor
-let g:go_auto_type_info = 1 " Use this option to show the type info (|:GoInfo|) for the word under the
-                            " cursor automatically.
-let g:go_def_reuse_buffer = 1 " Use this option to jump to an existing buffer for the split, vsplit and tab
-                              " mappings
-                              "
-let g:go_fold_enable = ['block', 'import', 'varconst', 'package_comment']  " Control syntax-based folding which
-                        " takes effect when 'foldmethod' is set to `syntax`.
-                        "
-let g:go_fmt_command = "goimports"
-let g:go_imports_autosave = 1
+" https://github.com/fatih/vim-go
+" highlight all uses of the identifier under the cursor
+let g:go_auto_sameids = 1
+" Use this option to show the type info (|:GoInfo|) for the word under the
+" cursor automatically.
+let g:go_auto_type_info = 1
 
-" do not use ALE to do the format
+" Use this option to jump to an existing buffer for the split, vsplit and tab
+" mappings
+let g:go_def_reuse_buffer = 1
+
+" Control syntax-based folding which
+" takes effect when 'foldmethod' is set to `syntax`.
+let g:go_fold_enable = ['block', 'import', 'varconst', 'package_comment']
+
+let g:go_fmt_command = "goimports"
+" using ALE to do the fix/format
+let g:go_imports_autosave = 0
 let g:go_fmt_autosave = 0
 
 let g:go_fmt_fail_silently = 0
@@ -80,4 +85,5 @@ let g:go_gopls_use_placeholders = 1
 
 " disable vim-go :GoDef short cut (gd)
 " this is handled by LanguageClient [LC]
+" https://octetz.com/docs/2019/2019-04-24-vim-as-a-go-ide/
 let g:go_def_mapping_enabled = 0

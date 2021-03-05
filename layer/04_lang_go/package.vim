@@ -1,5 +1,5 @@
 " https://github.com/fatih/vim-go-tutorial
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+" Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 " https://github.com/AndrewRadev/splitjoin.vim
 " gS to split a one-liner into multiple lines
