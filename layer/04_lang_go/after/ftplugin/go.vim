@@ -56,7 +56,8 @@ augroup END
 
 nmap gtj :CocCommand go.tags.add json<cr>
 nmap gty :CocCommand go.tags.add yaml<cr>
-nmap gtx :CocCommand go.tags.clear<cr>
+nmap gtx :CocCommand go.tags.add xml<cr>
+nmap gtd :CocCommand go.tags.clear<cr>
 
 
 " https://vimhelp.org/autocmd.txt.html#QuitPre
