@@ -25,15 +25,12 @@ command! -bang AT call go#alternate#Switch(<bang>0, 'tabe')
 " ALE config
 " **************************
 let b:ale_fixers = ['goimports']
-" let b:ale_linters = ['gometalinter']
-" let b:ale_go_gometalinter_options = '--fast'
-" let b:ale_go_gometalinter_lint_package = 1
-" let b:ale_linters = ['golangci-lint', 'staticcheck']
-" let b:ale_linters = ['golangci-lint', 'golint', 'nakedret', 'aligncheck', 'structcheck', 'varcheck']
-let b:ale_linters = ['golangci-lint', 'golint', 'gotype', 'staticcheck', 'govet']
-" let b:ale_linters = ['golangci-lint', 'staticcheck']
+" let b:ale_linters = ['golangci-lint', 'golint', 'gotype', 'staticcheck', 'govet']
+let b:ale_linters = ['golangci-lint']
+
 " golangci-ling bug: https://github.com/golangci/golangci-lint/issues/824
-let b:ale_go_golangci_lint_options = '--disable-all -E typecheck'
+" let b:ale_go_golangci_lint_options = '--disable-all -E typecheck'
+" let b:ale_go_golangci_lint_options = 'run -E maligned'
 " let b:ale_go_golangci_lint_options = '--disable-all -E typecheck -E nakedret -E prealloc -E maligned
             " \ -E goconst -E dupl -E unconvert -E stylecheck -E goimports'
             " \ -D deadcode -D structcheck'
@@ -41,7 +38,7 @@ let b:ale_go_golangci_lint_options = '--disable-all -E typecheck'
 " When set to `1`, the whole Go package will be checked instead of only the
 " current file.
 let b:ale_go_golangci_lint_package = 1
-let b:ale_go_staticcheck_package = 1
+" let b:ale_go_staticcheck_package = 1
 
 
 " **************************
