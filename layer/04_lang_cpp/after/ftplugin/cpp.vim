@@ -4,7 +4,7 @@
 " Disable color_coded in diff mode
 
 setlocal cindent comments=sr:/*,mb:*,el:*/,:// cino=)20,*30,g0
-setlocal tabstop=4 shiftwidth=4 softtabstop=4 textwidth=120
+setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
             \ expandtab autoindent fileformat=unix number
 
 if &diff
