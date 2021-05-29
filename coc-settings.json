@@ -1,33 +1,18 @@
 {
   "languageserver": {
-      "golang": {
+    "golang": {
             "command": "gopls",
             "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
             "filetypes": ["go"]
     },
-      "ccls": {
-            "command": "ccls",
-            "filetypes": [
-                "c",
-                "cpp",
-            ],
-            "rootPatterns": [
-                ".ccls",
-                "compile_commands.json",
-                ".vim/",
-                ".git/",
-                ".hg/"
-            ],
-            "initializationOptions": {
-                "cache": {
-                    "directory": "/tmp/ccls"
-                }
-            }
-    }
+    "clangd": {
+            "command": "clangd",
+            "args": ["--background-index", "--clang-tidy", "--completion-style=detailed", "--fallback-style=google", "--header-insertion=iwyu", "--suggest-missing-includes"],
+            "rootPatterns": ["compile_flags.txt", "compile_commands.json"],
+            "filetypes": ["c", "cpp"]
+    },
   },
   "clangd.enabled": true,
-  "clangd.arguments": ["--clang-tidy", "--completion-style=detailed", "--fallback-style=google", "--header-insertion=iwyu", "--suggest-missing-includes"],
-  "clangd.semanticHighlighting": true,
   "coc.preferences.colorSupport": true,
   "coc.preferences.formatOnSaveFiletypes": ["javascript", "css", "markdown"],
   "coc.source.file.shortcut": "F",

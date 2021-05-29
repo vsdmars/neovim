@@ -65,6 +65,11 @@ let g:ale_cpp_clangtidy_checks = ['cppcoreguidelines-*,google-*,llvm-*,modernize
 
 " disable clang-check
 let g:ale_cpp_clangcheck_executable = ''
+let b:ale_linters = []
+let g:ale_linters_ignore = {
+      \   'cpp': ['clangcheck'],
+      \}
+
 
 " clangd
 let g:ale_cpp_clangd_executable = 'clangd'
