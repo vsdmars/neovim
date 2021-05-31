@@ -73,7 +73,7 @@ let g:ale_linters_ignore = {
 
 " clangd
 let g:ale_cpp_clangd_executable = 'clangd'
-let g:ale_cpp_clangd_options = ["--clang-tidy --completion-style=detailed --fallback-style=google --header-insertion=iwyu --suggest-missing-includes"]
+let g:ale_cpp_clangd_options = ["-std=c++17 --clang-tidy --completion-style=detailed --fallback-style=google --header-insertion=iwyu --suggest-missing-includes"]
 
 " clang-format
 let g:ale_cpp_clangformat_executable = 'clang-format'
