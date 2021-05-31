@@ -13,6 +13,7 @@
     },
   },
   "clangd.enabled": true,
+  "clangd.semanticHighlighting": true,
   "coc.preferences.colorSupport": true,
   "coc.preferences.formatOnSaveFiletypes": ["javascript", "css", "markdown"],
   "coc.source.file.shortcut": "F",
