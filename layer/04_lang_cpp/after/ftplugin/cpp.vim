@@ -55,7 +55,7 @@ let c_no_curly_error=1
     " -Wunreachable-code
     " -Wuseless-cast
 let g:ale_cpp_cc_executable = "clang++"
-let g:ale_cpp_cc_options = '-std=c++17 -Wall -Wconversion -Wdouble-promotion -Weffc++ -Wextra -Wfloat-equal -Wformat=2 -Wno-error=unused-variable -Wnull-dereference -Wold-style-cast -Wpedantic -Wshadow -Wuninitialized -Wunreachable-code -Wredundant-move -Wpessimizing-move'
+let g:ale_cpp_cc_options = '-std=c++17 -Wall -Wconversion -Wdouble-promotion -Weffc++ -Wextra -Wfloat-equal -Wformat=2 -Wno-error=unused-variable -Wnull-dereference -Wold-style-cast -Wpedantic -Wshadow -Wuninitialized -Wunreachable-code -Wredundant-move -Wpessimizing-move -Wthread-safety'
 
 " clang-tidy
 let g:ale_cpp_clangtidy_executable = 'clang-tidy'
