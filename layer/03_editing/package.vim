@@ -71,6 +71,8 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
+Plug 'nanotee/zoxide.vim'
+
 " https://github.com/Shougo/neosnippet.vim
 " Extra snippet https://github.com/honza/vim-snippets
 " Plug 'Shougo/neosnippet.vim'
