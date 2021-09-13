@@ -74,6 +74,9 @@ Plug 'junegunn/fzf.vim'
 " https://github.com/dyng/ctrlsf.vim
 Plug 'dyng/ctrlsf.vim'
 
+" https://github.com/nanotee/zoxide.vim
+Plug 'nanotee/zoxide.vim'
+
 " https://github.com/Shougo/neosnippet.vim
 " Extra snippet https://github.com/honza/vim-snippets
 " Plug 'Shougo/neosnippet.vim'
