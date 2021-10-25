@@ -105,17 +105,17 @@ nmap <unique> <buffer> <leader>x :cprevious<CR>
 nmap <unique> <buffer> <leader>a :lclose<CR>
 nmap <unique> <buffer> <leader>s :cclose<CR>
 
-map <leader>g :call IncludeGuard()<CR>
-" ,c generates the copyleft info for c/c++
-map <leader>gc :call IncludeCR(0)<CR>
-" ,cm generates the copyleft info for cmake
-map <leader>gm :call IncludeCR(1)<CR>
+" map <leader>g :call IncludeGuard()<CR>
+" " ,c generates the copyleft info for c/c++
+" map <leader>gc :call IncludeCR(0)<CR>
+" " ,cm generates the copyleft info for cmake
+" map <leader>gm :call IncludeCR(1)<CR>
 
 " <Plug> meaning:
 " https://stackoverflow.com/questions/18546533/execute-plug-commands-in-vim
 " nnoremap <unique> <F7> :TaskList<CR>
 nnoremap <unique> <silent> <F7> <Plug>TaskList
-nnoremap <unique> <silent> <F8> :TagbarToggle<CR>
+" nnoremap <unique> <silent> <F8> :TagbarToggle<CR>
 
 
 " **************************
@@ -227,13 +227,13 @@ augroup end
 
 " Applying codeAction to the selected region.
 " Example: `<leader>aap` for current paragraph
-xmap <leader>a  <Plug>(coc-codeaction-selected)
-nmap <leader>a  <Plug>(coc-codeaction-selected)
+" xmap <leader>a  <Plug>(coc-codeaction-selected)
+" nmap <leader>a  <Plug>(coc-codeaction-selected)
 
 " Remap keys for applying codeAction to the current buffer.
-nmap <leader>ac  <Plug>(coc-codeaction)
+" nmap <leader>ac  <Plug>(coc-codeaction)
 " Apply AutoFix to problem on the current line.
-nmap <leader>qf  <Plug>(coc-fix-current)
+" nmap <leader>qf  <Plug>(coc-fix-current)
 
 " Map function and class text objects
 " NOTE: Requires 'textDocument.documentSymbol' support from the language server.

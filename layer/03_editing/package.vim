@@ -83,7 +83,11 @@ Plug 'nanotee/zoxide.vim'
 " Plug 'Shougo/neosnippet-snippets'
 " https://github.com/Shougo/context_filetype.vim
 " Plug 'Shougo/context_filetype.vim'
-"
+
+" https://github.com/SirVer/ultisnips
+" Track the engine.
+Plug 'SirVer/ultisnips'
+
 " https://github.com/honza/vim-snippets
 " Contains snippets files for various programming languages.
 Plug 'honza/vim-snippets'

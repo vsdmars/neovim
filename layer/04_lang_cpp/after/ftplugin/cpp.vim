@@ -83,14 +83,25 @@ let g:ale_cpp_clangformat_use_local_file = 1
 " **************************
 " Mapping
 " **************************
-nmap <silent> <Leader>dq :Dox<cr>
-nmap <silent> <Leader>dqb :DoxBlock<cr>
+nmap <silent> <leader>dq :Dox<cr>
+nmap <silent> <leader>dqb :DoxBlock<cr>
 
 " aug CppDoxygenSettings
     " au!
     " autocmd FileType cpp,ch nmap <silent> <Leader>dq :Dox<cr>
     " autocmd FileType cpp,ch nmap <silent> <Leader>dqb :DoxBlock<cr>
 " aug end
+
+
+" **************************
+" Map related
+" **************************
+nmap <unique> <buffer> <leader>q :lnext<CR>
+nmap <unique> <buffer> <leader>z :lprevious<CR>
+nmap <unique> <buffer> <leader>w :cnext<CR>
+nmap <unique> <buffer> <leader>x :cprevious<CR>
+nmap <unique> <buffer> <leader>a :lclose<CR>
+nmap <unique> <buffer> <leader>s :cclose<CR>
 
 
 " **************************
@@ -119,3 +130,17 @@ nnoremap <silent> <localleader>oh :FSSplitLeft<cr>
 nnoremap <silent> <localleader>oj :FSSplitBelow<cr>
 nnoremap <silent> <localleader>ok :FSSplitAbove<cr>
 nnoremap <silent> <localleader>ol :FSSplitRight<cr>
+
+
+" **************************
+" snippet
+" **************************
+function! s:JbzRemoveDebugPrints()
+  let save_cursor = getcurpos()
+  :g/\/\/\ prdbg$/d
+  call setpos('.', save_cursor)
+endfunction
+command! JbzRemoveDebugPrints call s:JbzRemoveDebugPrints()
+
+" delete the snippet # prd
+nnoremap <silent> <buffer><localleader>d :JbzRemoveDebugPrints<CR>
