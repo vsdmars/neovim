@@ -17,6 +17,7 @@
   "clangd.semanticHighlighting": true,
   "coc.preferences.colorSupport": true,
   "coc.preferences.formatOnSaveFiletypes": ["javascript", "css", "markdown"],
+  "coc.preferences.semanticTokensHighlights": false,
   "coc.source.file.shortcut": "F",
   "coc.source.file.priority": 89,
   "coc.source.file.ignoreHidden": false,
