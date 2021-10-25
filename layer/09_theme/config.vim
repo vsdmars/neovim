@@ -115,19 +115,29 @@ function! LightlineGitBlame() abort
 endfunction
 
 
+" **************************
+" tokyonight setting
+" **************************
+let g:tokyonight_style = 'night' " available: night, storm
+let g:tokyonight_enable_italic = 1
+let g:tokyonight_transparent_background = 1
+let g:tokyonight_enable_italic = 1
+let g:tokyonight_current_word = 'italic'
+colorscheme tokyonight
+
 
 " **************************
 " nord setting
 " **************************
 " getColorCode foreground|more
-colorscheme nord
-let g:nord_cursor_line_number_background = 1
-let g:nord_bold_vertical_split_line = 1
-let g:nord_uniform_diff_background = 1
-let g:nord_italic_comments = 1
+" colorscheme nord
+" let g:nord_cursor_line_number_background = 1
+" let g:nord_bold_vertical_split_line = 1
+" let g:nord_uniform_diff_background = 1
+" let g:nord_italic_comments = 1
 
-augroup nord-theme-overrides
-  autocmd!
-  " Use 'nord7' as foreground color for Vim comment titles.
-  autocmd ColorScheme nord highlight vimCommentTitle ctermfg=14 guifg=#8FBCBB
-augroup END
+" augroup nord-theme-overrides
+  " autocmd!
+  " " Use 'nord7' as foreground color for Vim comment titles.
+  " autocmd ColorScheme nord highlight vimCommentTitle ctermfg=14 guifg=#8FBCBB
+" augroup END

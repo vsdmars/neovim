@@ -13,6 +13,8 @@ set secure              " go with set exrc
 " set leader to ,
 let mapleader=","
 let g:mapleader=","
+let maplocalleader=",,"
+let g:maplocalleader=",,"
 
 let g:hostname = substitute(system('hostname'), "\n", "", "")
 

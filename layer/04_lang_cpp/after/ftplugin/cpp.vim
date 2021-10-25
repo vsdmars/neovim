@@ -59,7 +59,7 @@ let g:ale_cpp_cc_options = '-std=c++17 -Wall -Wconversion -Wdouble-promotion -We
 
 " clang-tidy
 let g:ale_cpp_clangtidy_executable = 'clang-tidy'
-let g:ale_cpp_clangtidy_options = '-std=c++17'
+let g:ale_cpp_clangtidy_options = '-std=c++20'
 " let g:ale_cpp_clangtidy_checks = ['abseil-*,boost-*,cppcoreguidelines-*,clang-analyzer-*,fuchsia-*,google-*,llvm-*,modernize-*,performance-*,portability-*,readability-*']
 let g:ale_cpp_clangtidy_checks = ['cppcoreguidelines-*,google-*,llvm-*,modernize-*,performance-*,portability-*,readability-*']
 
@@ -73,7 +73,7 @@ let g:ale_linters_ignore = {
 
 " clangd
 let g:ale_cpp_clangd_executable = 'clangd'
-let g:ale_cpp_clangd_options = ["-std=c++17 --clang-tidy --completion-style=detailed --fallback-style=google --header-insertion=iwyu --suggest-missing-includes"]
+let g:ale_cpp_clangd_options = ["-std=c++20 --clang-tidy --completion-style=detailed --fallback-style=google --header-insertion=iwyu --suggest-missing-includes"]
 
 " clang-format
 let g:ale_cpp_clangformat_executable = 'clang-format'
@@ -91,3 +91,31 @@ nmap <silent> <Leader>dqb :DoxBlock<cr>
     " autocmd FileType cpp,ch nmap <silent> <Leader>dq :Dox<cr>
     " autocmd FileType cpp,ch nmap <silent> <Leader>dqb :DoxBlock<cr>
 " aug end
+
+
+" **************************
+" CPPMan
+" **************************
+function! s:JbzCppMan()
+    let old_isk = &iskeyword
+    setl iskeyword+=:
+    let str = expand("<cword>")
+    let &l:iskeyword = old_isk
+    execute 'Man ' . str
+endfunction
+command! JbzCppMan :call s:JbzCppMan()
+
+nnoremap <buffer>K :JbzCppMan<CR>
+
+
+" **************************
+" vim-fswitch
+" **************************
+au BufEnter *.h let b:fswitchdst = 'c,cpp,m,cc' | let b:fswitchlocs = 'reg:|include.*|src/**|'
+au BufEnter *.cc let b:fswitchdst = "h,hpp"
+nnoremap <silent> <A-o> :FSHere<cr>
+" Extra hotkeys to open header/source in the split
+nnoremap <silent> <localleader>oh :FSSplitLeft<cr>
+nnoremap <silent> <localleader>oj :FSSplitBelow<cr>
+nnoremap <silent> <localleader>ok :FSSplitAbove<cr>
+nnoremap <silent> <localleader>ol :FSSplitRight<cr>

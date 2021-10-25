@@ -133,8 +133,19 @@ Plug 'Yggdroot/indentLine'
 " **************************
 " https://github.com/majutsushi/tagbar
 " <F8>
-Plug 'majutsushi/tagbar'
+" Plug 'majutsushi/tagbar'
 
 " type tasklist to show todos'
 " <F7>
 Plug 'vim-scripts/TaskList.vim'
+
+" https://github.com/liuchengxu/vista.vim
+Plug 'liuchengxu/vista.vim'
+
+
+
+" **************************
+" Browsing related
+" **************************
+" https://github.com/tyru/open-browser.vim
+Plug 'tyru/open-browser.vim'
