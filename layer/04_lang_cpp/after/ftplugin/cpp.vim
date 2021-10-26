@@ -96,12 +96,12 @@ nmap <silent> <leader>dqb :DoxBlock<cr>
 " **************************
 " Map related
 " **************************
-nmap <unique> <buffer> <leader>q :lnext<CR>
-nmap <unique> <buffer> <leader>z :lprevious<CR>
-nmap <unique> <buffer> <leader>w :cnext<CR>
-nmap <unique> <buffer> <leader>x :cprevious<CR>
-nmap <unique> <buffer> <leader>a :lclose<CR>
-nmap <unique> <buffer> <leader>s :cclose<CR>
+nmap <buffer> <leader>q :lnext<CR>
+nmap <buffer> <leader>z :lprevious<CR>
+nmap <buffer> <leader>w :cnext<CR>
+nmap <buffer> <leader>x :cprevious<CR>
+nmap <buffer> <leader>a :lclose<CR>
+nmap <buffer> <leader>s :cclose<CR>
 
 
 " **************************
