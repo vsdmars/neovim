@@ -22,6 +22,6 @@ Plug 'ghifarit53/tokyonight-vim'
 " Plug 'flazz/vim-colorschemes'
 
 " https://github.com/arcticicestudio/nord-vim
-" Plug 'arcticicestudio/nord-vim'
+Plug 'arcticicestudio/nord-vim'
 
 " https://github.com/ayu-theme/ayu-vim
