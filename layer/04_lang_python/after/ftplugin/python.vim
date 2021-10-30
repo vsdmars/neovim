@@ -34,8 +34,8 @@ augroup END
 " Check Python files with flake8 and pylint.
 let b:ale_linters = ['pylint']
 " Fix Python files with autopep8
-let b:ale_fixers = ['autopep8', 'add_blank_lines_for_python_control_statements',
-            \ 'black', 'isort', 'remove_trailing_lines', 'trim_whitespace']
+" let b:ale_fixers = ['autopep8', 'add_blank_lines_for_python_control_statements',
+            " \ 'black', 'isort', 'remove_trailing_lines', 'trim_whitespace']
 
 
 " let b:jedi#auto_initialization = 0
