@@ -21,7 +21,8 @@ let g:ale_fixers = {
 \ }
 
 let g:ale_linters = {
-\   'cpp': ['clangtidy']
+\   'cpp': ['clangtidy'],
+\   'rust': ['analyzer']
 \ }
 
 " Write this in your vimrc file
