@@ -17,11 +17,13 @@ let g:ale_list_window_size = 5
 let g:ale_fix_on_save = 1
 let g:ale_fixers = {
 \   'cpp': ['clang-format'],
+\   'rust': ['rustfmt'],
 \   '*': ['remove_trailing_lines', 'trim_whitespace']
 \ }
 
 let g:ale_linters = {
-\   'cpp': ['clangtidy']
+\   'cpp': ['clangtidy'],
+\   'rust': ['analyzer']
 \ }
 
 " Write this in your vimrc file
@@ -273,7 +275,7 @@ command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organize
 " Add (Neo)Vim's native statusline support.
 " NOTE: Please see `:h coc-status` for integrations with external plugins that
 " provide custom statusline: lightline.vim, vim-airline.
-set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+" set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
 " Mappings for CoCList
 " Show all diagnostics.
@@ -422,19 +424,3 @@ let g:openbrowser_search_engines = extend(
 
 nnoremap <silent> <leader>osx :call openbrowser#smart_search(expand('<cword>'), "cppreference")<CR>
 nnoremap <silent> <leader>osq :call openbrowser#smart_search(expand('<cword>'), "qt")<CR>
-
-
-" **************************
-" Vista setting
-" **************************
-function! NearestMethodOrFunction() abort
-  return get(b:, 'vista_nearest_method_or_function', '')
-endfunction
-
-set statusline+=%{NearestMethodOrFunction()}
-
-" By default vista.vim never run if you don't call it explicitly.
-"
-" If you want to show the nearest function in your statusline automatically,
-" you can add the following line to your vimrc
-autocmd VimEnter * call vista#RunForNearestMethodOrFunction()

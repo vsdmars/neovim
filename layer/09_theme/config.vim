@@ -92,27 +92,60 @@ augroup END
 " **************************
 " Lightline setting
 " **************************
-let g:lightline = {
-      \ 'active': {
-      \   'left': [
-      \     [ 'mode', 'paste' ],
-      \     [ 'ctrlpmark', 'git', 'diagnostic', 'cocstatus', 'filename', 'method' ]
-      \   ],
-      \   'right':[
-      \     [ 'filetype', 'fileencoding', 'lineinfo', 'percent' ],
-      \     [ 'blame' ]
-      \   ],
-      \ },
-      \ 'component_function': {
-      \  'blame': 'LightlineGitBlame',
-      \ }
-  \ }
+" let g:lightline = {
+      " \ 'active': {
+      " \   'left': [
+      " \     [ 'mode', 'paste' ],
+      " \     [ 'ctrlpmark', 'git', 'diagnostic', 'cocstatus', 'filename', 'method' ]
+      " \   ],
+      " \   'right':[
+      " \     [ 'filetype', 'fileencoding', 'lineinfo', 'percent' ],
+      " \     [ 'blame' ]
+      " \   ],
+      " \ },
+      " \ 'component_function': {
+      " \  'blame': 'LightlineGitBlame',
+      " \ }
+  " \ }
+
+  let g:lightline = {
+	\ 'colorscheme': 'nord',
+	\ 'active': {
+	\   'left': [ [ 'mode', 'paste' ],
+    \             [ 'ctrlpmark', 'git', 'diagnostic', 'cocstatus', 'filename', 'method' , 'modified'],
+    \    ],
+	\ },
+	\ 'component_function': {
+    \   'blame': 'LightlineGitBlame',
+	\   'cocstatus': 'coc#status',
+    \   'method': 'NearestMethodOrFunction',
+	\ },
+	\ }
+
 
 function! LightlineGitBlame() abort
   let blame = get(b:, 'coc_git_blame', '')
   " return blame
   return winwidth(0) > 120 ? blame : ''
 endfunction
+
+
+
+" **************************
+" Vista setting
+" **************************
+function! NearestMethodOrFunction() abort
+  return get(b:, 'vista_nearest_method_or_function', '')
+endfunction
+
+" set statusline+=%{NearestMethodOrFunction()}
+
+" By default vista.vim never run if you don't call it explicitly.
+"
+" If you want to show the nearest function in your statusline automatically,
+" you can add the following line to your vimrc
+autocmd VimEnter * call vista#RunForNearestMethodOrFunction()
+
 
 
 " **************************
