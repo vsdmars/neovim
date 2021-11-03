@@ -5,13 +5,6 @@
             "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
             "filetypes": ["go"]
     },
-    "clangd": {
-            "command": "clangd",
-            "args": ["--background-index", "--clang-tidy", "--completion-style=detailed", "--fallback-style=google", "--header-insertion=iwyu"],
-
-            "rootPatterns": ["compile_flags.txt", "compile_commands.json"],
-            "filetypes": ["c", "cpp"]
-    },
   },
   "clangd.enabled": true,
   "clangd.semanticHighlighting": true,
