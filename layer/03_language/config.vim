@@ -70,14 +70,14 @@ let g:indentLine_fileTypeExclude = ['help', 'nerdtree', 'calendar', 'thumbnail',
 " Function related
 " **************************
 fun! IncludeGuard()
-   call IncludeCR(0)
-   " call append(4, "#pragma once")
-   let basename = substitute(bufname(""), '.*/', '', '')
-   let guard = 'VSDMARS_' . substitute(toupper(basename), '\.', '_', "H")
-   call append(3, "")
-   call append(4, "#ifndef " . guard)
-   call append(5, "#define " . guard)
-   call append( line("$"), "#endif // for #ifndef " . guard)
+   " call IncludeCR(0)
+   call append(0, "#pragma once")
+   " let basename = substitute(bufname(""), '.*/', '', '')
+   " let guard = 'VSDMARS_' . substitute(toupper(basename), '\.', '_', "H")
+   " call append(3, "")
+   " call append(4, "#ifndef " . guard)
+   " call append(5, "#define " . guard)
+   " call append( line("$"), "#endif // for #ifndef " . guard)
 endfun
 
 fun! IncludeCR(type)
@@ -107,7 +107,7 @@ nmap <unique> <buffer> <leader>x :cprevious<CR>
 nmap <unique> <buffer> <leader>a :lclose<CR>
 nmap <unique> <buffer> <leader>s :cclose<CR>
 
-" map <leader>g :call IncludeGuard()<CR>
+map <leader>g :call IncludeGuard()<CR>
 " " ,c generates the copyleft info for c/c++
 " map <leader>gc :call IncludeCR(0)<CR>
 " " ,cm generates the copyleft info for cmake
