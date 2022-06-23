@@ -58,26 +58,18 @@ let g:ale_cpp_cc_executable = "clang++"
 let g:ale_cpp_cc_options = "-std=c++20 -Wall"
 
 " clang-tidy
-let g:ale_cpp_clangtidy_executable = "clang-tidy"
-let g:ale_cpp_clangtidy_options = ""
-" let g:ale_cpp_clangtidy_checks = ['abseil-*,boost-*,cppcoreguidelines-*,clang-analyzer-*,fuchsia-*,google-*,llvm-*,modernize-*,performance-*,portability-*,readability-*']
-let g:ale_cpp_clangtidy_checks = ['cppcoreguidelines-*,google-*,llvm-*,modernize-*,performance-*,portability-*,readability-*']
-
-" disable clang-check
-let g:ale_cpp_clangcheck_executable = ''
-let b:ale_linters = []
-let g:ale_linters_ignore = {
-      \   'cpp': ['clangcheck'],
-      \}
-
+" let g:ale_cpp_clangtidy_executable = "clang-tidy"
+" let g:ale_cpp_clangtidy_options = ""
+" " let g:ale_cpp_clangtidy_checks = ['abseil-*,boost-*,cppcoreguidelines-*,clang-analyzer-*,fuchsia-*,google-*,llvm-*,modernize-*,performance-*,portability-*,readability-*']
+" let g:ale_cpp_clangtidy_checks = ['cppcoreguidelines-*,google-*,llvm-*,modernize-*,performance-*,portability-*,readability-*']
 
 " clangd
 " let g:ale_cpp_clangd_executable = 'clangd'
 " let g:ale_cpp_clangd_options = ["--clang-tidy --completion-style=detailed --fallback-style=google --header-insertion=iwyu"]
 
 " clang-format
-let g:ale_cpp_clangformat_executable = 'clang-format'
-let g:ale_cpp_clangformat_use_local_file = 1
+" let g:ale_cpp_clangformat_executable = 'clang-format'
+" let g:ale_cpp_clangformat_use_local_file = 1
 
 
 " **************************
