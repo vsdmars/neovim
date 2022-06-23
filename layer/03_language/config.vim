@@ -35,7 +35,8 @@ let g:ale_lint_delay = 500
 " if you don't want linters to run on opening a file
 let g:ale_lint_on_enter = 0
 let g:ale_lint_on_save = 1
-let g:ale_open_list = 1
+" open location list or quick fix window if there's error
+let g:ale_open_list = 0
 " This can be useful if you are combining ALE with
 " some other plugin which sets quickfix errors, etc.
 let g:ale_keep_list_window_open = 0
@@ -44,6 +45,7 @@ let g:ale_keep_list_window_open = 0
 " https://stackoverflow.com/a/20934608
 let g:ale_set_loclist = 1  " local to window
 let g:ale_set_quickfix = 0  " global
+
 let g:ale_echo_msg_error_str = 'E'
 let g:ale_echo_msg_warning_str = 'W'
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'

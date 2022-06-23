@@ -88,6 +88,7 @@ nmap <silent> <leader>dqb :DoxBlock<cr>
 " **************************
 " Map related
 " **************************
+highlight QuickFixLine ctermbg=none
 nmap <buffer> <leader>q :lnext<CR>
 nmap <buffer> <leader>z :lprevious<CR>
 nmap <buffer> <leader>w :cnext<CR>
