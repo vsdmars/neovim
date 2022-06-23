@@ -59,9 +59,9 @@ let g:ale_cpp_cc_options = "-std=c++20 -Wall"
 
 " clang-tidy
 " let g:ale_cpp_clangtidy_executable = "clang-tidy"
-" let g:ale_cpp_clangtidy_options = ""
+let g:ale_cpp_clangtidy_extra_options = "--extra-arg=-std=c++20"
 " " let g:ale_cpp_clangtidy_checks = ['abseil-*,boost-*,cppcoreguidelines-*,clang-analyzer-*,fuchsia-*,google-*,llvm-*,modernize-*,performance-*,portability-*,readability-*']
-" let g:ale_cpp_clangtidy_checks = ['cppcoreguidelines-*,google-*,llvm-*,modernize-*,performance-*,portability-*,readability-*']
+let g:ale_cpp_clangtidy_checks = ['cppcoreguidelines-*,google-*,llvm-*,modernize-*,performance-*,portability-*,readability-*']
 
 " clangd
 " let g:ale_cpp_clangd_executable = 'clangd'
@@ -69,7 +69,7 @@ let g:ale_cpp_cc_options = "-std=c++20 -Wall"
 
 " clang-format
 " let g:ale_cpp_clangformat_executable = 'clang-format'
-" let g:ale_cpp_clangformat_use_local_file = 1
+let g:ale_cpp_clangformat_use_local_file = 1
 
 
 " **************************

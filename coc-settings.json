@@ -6,7 +6,7 @@
             "filetypes": ["go"]
     },
   },
-  "clangd.enabled": false,
+  "clangd.enabled": true,
   "clangd.checkUpdates": true,
   "coc.preferences.colorSupport": true,
   "coc.preferences.formatOnSaveFiletypes": ["javascript", "css", "markdown"],
