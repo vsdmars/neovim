@@ -21,10 +21,10 @@ let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace']
 \ }
 
-let g:ale_linters = {
-\   'cpp': ['clangtidy'],
-\   'rust': ['analyzer']
-\ }
+" let g:ale_linters = {
+" \   'cpp': ['clangtidy'],
+" \   'rust': ['analyzer']
+" \ }
 
 " Write this in your vimrc file
 let g:ale_lint_on_text_changed = 'never'
@@ -384,9 +384,9 @@ autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
 " **************************
 " https://github.com/neoclide/coc-prettier
 " Formatting selected code.
-command! -nargs=0 Prettier :CocCommand prettier.formatFile
+command! -nargs=0 Prettier :CocCommand prettier.forceFormatDocument
 vmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected
+nmap <leader>f  <Plug>(coc-format-selected)
 
 
 " **************************
@@ -394,8 +394,8 @@ nmap <leader>f  <Plug>(coc-format-selected
 " https://github.com/clangd/coc-clangd
 " **************************
 " project setup: https://clangd.llvm.org/installation.html#project-setup
-nmap <leader><leader>h  :clangd.switchSourceHeader<CR>
-nmap <leader><leader>s  :clangd.symbolInfo<CR>
+nmap <leader><leader>h  :CocCommand clangd.switchSourceHeader<CR>
+nmap <leader><leader>s  :CocCommand clangd.symbolInfo<CR>
 
 
 " **************************

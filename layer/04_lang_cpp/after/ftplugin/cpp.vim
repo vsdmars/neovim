@@ -55,11 +55,11 @@ let c_no_curly_error=1
     " -Wunreachable-code
     " -Wuseless-cast
 let g:ale_cpp_cc_executable = "clang++"
-let g:ale_cpp_cc_options = '-std=c++20 -Wall -Wconversion -Wdouble-promotion -Weffc++ -Wextra -Wfloat-equal -Wformat=2 -Wno-error=unused-variable -Wnull-dereference -Wold-style-cast -Wpedantic -Wshadow -Wuninitialized -Wunreachable-code -Wredundant-move -Wpessimizing-move -Wthread-safety -Werror -fsanitize=undefined,address'
+let g:ale_cpp_cc_options = "-std=c++20 -Wall"
 
 " clang-tidy
-let g:ale_cpp_clangtidy_executable = 'clang-tidy'
-let g:ale_cpp_clangtidy_options = '-std=c++20'
+let g:ale_cpp_clangtidy_executable = "clang-tidy"
+let g:ale_cpp_clangtidy_options = ""
 " let g:ale_cpp_clangtidy_checks = ['abseil-*,boost-*,cppcoreguidelines-*,clang-analyzer-*,fuchsia-*,google-*,llvm-*,modernize-*,performance-*,portability-*,readability-*']
 let g:ale_cpp_clangtidy_checks = ['cppcoreguidelines-*,google-*,llvm-*,modernize-*,performance-*,portability-*,readability-*']
 
@@ -72,8 +72,8 @@ let g:ale_linters_ignore = {
 
 
 " clangd
-let g:ale_cpp_clangd_executable = 'clangd'
-let g:ale_cpp_clangd_options = ["--clang-tidy --completion-style=detailed --fallback-style=google --header-insertion=iwyu"]
+" let g:ale_cpp_clangd_executable = 'clangd'
+" let g:ale_cpp_clangd_options = ["--clang-tidy --completion-style=detailed --fallback-style=google --header-insertion=iwyu"]
 
 " clang-format
 let g:ale_cpp_clangformat_executable = 'clang-format'
