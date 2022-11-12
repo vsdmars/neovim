@@ -8,6 +8,46 @@ To exit insert mode in terminal emulator, press <Ctrl+\><Ctrl+N>.
 To exit terminal emulator and close the window, use exit.
 
 
+Json:
+:FormatJson
+
+
+CMAKE:
+:CMakeGenerate
+:CMakeBuild
+:CMakeSwitch <config>
+:CMakeTest
+:CMakeClean
+:CMakeInstall
+:CMakeOpen
+:CMakeClose
+:CMakeStop
+
+
+Multi-select:
+<C-n>
+
+
+fzf:
+https://github.com/junegunn/fzf#usage
+https://github.com/junegunn/fzf.vim
+:Rg
+:Files // <C-p>
+:GFiles
+:Buffers
+:BLines
+:Marks
+
+
+Search:
+https://github.com/dyng/ctrlsf.vim#quick-start
+:CtrlSF
+,* // search same word in file
+
+
+Move line:
+<C-j,k>
+
 
 Git:
 https://github.com/tpope/vim-fugitive/blob/master/doc/fugitive.txt

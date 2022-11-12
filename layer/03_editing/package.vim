@@ -69,6 +69,7 @@ Plug 'ntpeters/vim-better-whitespace'
 
 " https://github.com/junegunn/fzf.vim
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 
 " https://github.com/dyng/ctrlsf.vim
 Plug 'dyng/ctrlsf.vim'
@@ -137,10 +138,6 @@ Plug 'mbbill/undotree'
 " ,cp
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'FelikZ/ctrlp-py-matcher'
-
-" https://github.com/mileszs/ack.vim
-" :Ack
-Plug 'mileszs/ack.vim'
 
 " https://github.com/thaerkh/vim-workspace
 " ,S

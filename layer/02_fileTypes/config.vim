@@ -1,7 +1,8 @@
-" [link text](link-url.md) should reference link-url.md
 " https://github.com/plasticboy/vim-markdowo
+" folding utility
 let g:vim_markdown_no_extensions_in_markdown = 0
 let g:vim_markdown_folding_disabled = 0
+let g:vim_markdown_folding_style_pythonic = 1
 
 " Reference: http://blog.ciplogic.com/index.php/blog/95-vim-asciidoc-or-markdown-source-code-blocks-highlight
 function! FormatJson()

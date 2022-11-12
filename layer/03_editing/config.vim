@@ -81,21 +81,8 @@ let g:ctrlp_clear_cache_on_exit = 0
 
 
 " **************************
-" Ack settings
-" **************************
-" https://github.com/mileszs/ack.vim
-let g:ackprg = 'ag --vimgrep'
-" Don't jump to first result
-cnoreabbrev Ag Ack!
-let g:ackhighlight = 0
-" Disable terminal output of ag as it runs
-set shellpipe=>
-
-
-" **************************
 " Workspace settings
 " **************************
-" https://github.com/mileszs/ack.vim
 " https://github.com/thaerkh/vim-workspace
 let g:workspace_session_name = '.session.vim'
 let g:workspace_undodir = '.vimundo'
@@ -126,6 +113,7 @@ let g:NERDTrimTrailingWhitespace = 1
 " BClose settings
 " **************************
 " https://github.com/rbgrouleff/bclose.vim
+" deleting a buffer in Vim without closing the window.
 let g:bclose_no_plugin_maps = 1
 let g:no_plugin_maps = 1
 
@@ -343,8 +331,6 @@ sunmap ge
 " https://github.com/thaerkh/vim-workspace
 nnoremap <leader>S :ToggleWorkspace<CR>
 
-" https://github.com/mileszs/ack.vim
-nnoremap <C-f> :Ack!
 " Count word occurrences in a file
 map ,* *<C-O>:%s///gn<CR>
 

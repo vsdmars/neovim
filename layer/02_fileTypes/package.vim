@@ -4,9 +4,9 @@
 " Plug 'vim-scripts/SyntaxRange'
 
 " https://github.com/godlygeek/tabular
-Plug 'godlygeek/tabular', {
-      \ 'for' : ['markdown'],
-\ }
+" Plug 'godlygeek/tabular', {
+      " \ 'for' : ['markdown'],
+" \ }
 
 " https://github.com/plasticboy/vim-markdown
 " The following commands are useful to open and close folds:
