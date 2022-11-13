@@ -50,37 +50,11 @@ augroup FixColorschemeSettings
 augroup END
 
 
-
-" **************************
-" Lightline setting
-" **************************
-let g:lightline = {
-	\ 'colorscheme': 'nord',
-	\ 'active': {
-	\   'left': [ [ 'mode', 'paste' ],
-    \             [ 'ctrlpmark', 'git', 'diagnostic', 'cocstatus', 'filename', 'method' , 'modified'],
-    \    ],
-	\ },
-	\ 'component_function': {
-    \   'blame': 'LightlineGitBlame',
-	\   'cocstatus': 'coc#status',
-    \   'method': 'NearestMethodOrFunction',
-	\ },
-	\ }
-
-
-function! LightlineGitBlame() abort
-  let blame = get(b:, 'coc_git_blame', '')
-  " return blame
-  return winwidth(0) > 120 ? blame : ''
-endfunction
-
-
 " **************************
 " nord setting
 " **************************
 " getColorCode foreground|more
-" colorscheme nord
+colorscheme nord
 let g:nord_cursor_line_number_background = 1
 let g:nord_bold_vertical_split_line = 1
 let g:nord_uniform_diff_background = 1
