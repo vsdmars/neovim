@@ -1,13 +1,7 @@
 {
-  "languageserver": {
-    "golang": {
-            "command": "gopls",
-            "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
-            "filetypes": ["go"]
-    },
-  },
   "clangd.enabled": true,
   "clangd.checkUpdates": true,
+  "clangd.semanticHighlighting": true,
   "coc.preferences.colorSupport": true,
   "coc.preferences.formatOnSaveFiletypes": ["javascript", "css", "markdown"],
   "coc.preferences.semanticTokensHighlights": false,

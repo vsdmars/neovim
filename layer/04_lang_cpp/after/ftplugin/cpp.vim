@@ -75,8 +75,8 @@ let g:ale_cpp_clangformat_use_local_file = 1
 " **************************
 " Mapping
 " **************************
-nmap <silent> <leader>dq :Dox<cr>
-nmap <silent> <leader>dqb :DoxBlock<cr>
+" nmap <silent> <leader>dq :Dox<cr>
+" nmap <silent> <leader>dqb :DoxBlock<cr>
 
 " aug CppDoxygenSettings
     " au!
@@ -109,20 +109,7 @@ function! s:JbzCppMan()
 endfunction
 command! JbzCppMan :call s:JbzCppMan()
 
-nnoremap <buffer>K :JbzCppMan<CR>
-
-
-" **************************
-" vim-fswitch
-" **************************
-au BufEnter *.h let b:fswitchdst = 'c,cpp,m,cc' | let b:fswitchlocs = 'reg:|include.*|src/**|'
-au BufEnter *.cc let b:fswitchdst = "h,hpp"
-nnoremap <silent> <A-o> :FSHere<cr>
-" Extra hotkeys to open header/source in the split
-nnoremap <silent> <localleader>oh :FSSplitLeft<cr>
-nnoremap <silent> <localleader>oj :FSSplitBelow<cr>
-nnoremap <silent> <localleader>ok :FSSplitAbove<cr>
-nnoremap <silent> <localleader>ol :FSSplitRight<cr>
+" nnoremap <buffer>K :JbzCppMan<CR>
 
 
 " **************************
@@ -137,3 +124,39 @@ command! JbzRemoveDebugPrints call s:JbzRemoveDebugPrints()
 
 " delete the snippet # prd
 nnoremap <silent> <buffer><localleader>d :JbzRemoveDebugPrints<CR>
+
+
+" **************************
+" Function related
+" **************************
+fun! IncludeGuard()
+   " call IncludeCR(0)
+   call append(0, "#pragma once")
+   " let basename = substitute(bufname(""), '.*/', '', '')
+   " let guard = 'VSDMARS_' . substitute(toupper(basename), '\.', '_', "H")
+   " call append(3, "")
+   " call append(4, "#ifndef " . guard)
+   " call append(5, "#define " . guard)
+   " call append( line("$"), "#endif // for #ifndef " . guard)
+endfun
+
+fun! IncludeCR(type)
+   if a:type == 0
+      let l:guard0 = '/* ******************************'
+      let l:guard1 = ' * Copyleft 2021 vsdmars'
+      let l:guard2 = ' * ******************************/'
+   elseif a:type == 1
+      let l:guard0 = '# ******************************'
+      let l:guard1 = '# Copyleft 2021 vsdmars'
+      let l:guard2 = '# ******************************'
+   endif
+   call append(0, guard0)
+   call append(1, guard1)
+   call append(2, guard2)
+endfun
+
+map <leader>g :call IncludeGuard()<CR>
+" " ,c generates the copyleft info for c/c++
+" map <leader>gc :call IncludeCR(0)<CR>
+" " ,cm generates the copyleft info for cmake
+" map <leader>gm :call IncludeCR(1)<CR>

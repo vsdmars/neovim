@@ -17,13 +17,11 @@ let g:ale_list_window_size = 5
 let g:ale_fix_on_save = 1
 let g:ale_fixers = {
 \   'cpp': ['clang-format'],
-\   'rust': ['rustfmt'],
 \   '*': ['remove_trailing_lines', 'trim_whitespace']
 \ }
 
 let g:ale_linters = {
 \   'cpp': ['clangtidy'],
-\   'rust': ['analyzer']
 \ }
 
 " Write this in your vimrc file
@@ -61,42 +59,11 @@ nmap <silent> ]c <Plug>(ale_next_wrap)
 
 " https://github.com/majutsushi/tagbar
 " set focus to TagBar when opening it
-let g:tagbar_autofocus = 0
+" let g:tagbar_autofocus = 0
 
 " https://github.com/Yggdroot/indentLine
 let g:indentLine_enabled = 1
 let g:indentLine_fileTypeExclude = ['help', 'nerdtree', 'calendar', 'thumbnail', 'tweetvim']
-
-
-" **************************
-" Function related
-" **************************
-fun! IncludeGuard()
-   " call IncludeCR(0)
-   call append(0, "#pragma once")
-   " let basename = substitute(bufname(""), '.*/', '', '')
-   " let guard = 'VSDMARS_' . substitute(toupper(basename), '\.', '_', "H")
-   " call append(3, "")
-   " call append(4, "#ifndef " . guard)
-   " call append(5, "#define " . guard)
-   " call append( line("$"), "#endif // for #ifndef " . guard)
-endfun
-
-fun! IncludeCR(type)
-   if a:type == 0
-      let l:guard0 = '/* ******************************'
-      let l:guard1 = ' * Copyleft 2021 vsdmars'
-      let l:guard2 = ' * ******************************/'
-   elseif a:type == 1
-      let l:guard0 = '# ******************************'
-      let l:guard1 = '# Copyleft 2021 vsdmars'
-      let l:guard2 = '# ******************************'
-   endif
-   call append(0, guard0)
-   call append(1, guard1)
-   call append(2, guard2)
-endfun
-
 
 
 " **************************
@@ -108,12 +75,6 @@ nmap <unique> <buffer> <leader>w :cnext<CR>
 nmap <unique> <buffer> <leader>x :cprevious<CR>
 nmap <unique> <buffer> <leader>a :lclose<CR>
 nmap <unique> <buffer> <leader>s :cclose<CR>
-
-map <leader>g :call IncludeGuard()<CR>
-" " ,c generates the copyleft info for c/c++
-" map <leader>gc :call IncludeCR(0)<CR>
-" " ,cm generates the copyleft info for cmake
-" map <leader>gm :call IncludeCR(1)<CR>
 
 " <Plug> meaning:
 " https://stackoverflow.com/questions/18546533/execute-plug-commands-in-vim
@@ -404,8 +365,8 @@ nmap <leader><leader>s  :CocCommand clangd.symbolInfo<CR>
 " coc-github-users setting
 " https://github.com/cb372/coc-github-users
 " **************************
-"
-"
+
+
 " **************************
 " coc-db setting
 " https://github.com/kristijanhusak/vim-dadbod-completion
