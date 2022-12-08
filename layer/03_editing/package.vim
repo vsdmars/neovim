@@ -1,4 +1,14 @@
 " **************************
+" Library
+" **************************
+Plug 'nvim-lua/plenary.nvim'
+
+" https://github.com/nvim-telescope/telescope-fzf-native.nvim
+Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
+
+
+
+" **************************
 " Editing related
 " **************************
 " normal mode / visual mode
@@ -92,6 +102,8 @@ Plug 'SirVer/ultisnips'
 " Contains snippets files for various programming languages.
 Plug 'honza/vim-snippets'
 
+" https://github.com/nvim-telescope/telescope.nvim
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
 
 
 " **************************

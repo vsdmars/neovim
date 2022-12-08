@@ -422,3 +422,14 @@ nnoremap <C-p> :Files<CR>
 
 " Tell Neosnippet about the other snippets
 " let g:neosnippet#snippets_directory='~/.config/nvim/plugged/vim-snippets/snippets'
+
+
+
+" **************************
+" Telescope Setting
+" **************************
+" Find files using Telescope command-line sugar.
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
