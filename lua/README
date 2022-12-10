@@ -1,1 +1,5 @@
 https://github.com/nanotee/nvim-lua-guide
+
+1. remove plug managed packages
+2. migrage to packer.lua
+3. lua code for loading config.vim

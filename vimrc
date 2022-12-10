@@ -1,5 +1,8 @@
 " Author: vsdmars vsdmars@gmail.com
 
+" test lua
+command! Scratch lua require('test').makeScratch()
+
 set nocompatible        " not compatible with the old-fashion vi mode
 set hidden              " set buffer hidden
 
