@@ -30,7 +30,7 @@ let g:lightline = {
 \   'active': {
 \    'left' :[[ 'mode', 'paste' ],
 \             [ 'readonly', 'absolutepath', 'modified' ]],
-\    'right':[[ 'filetype', 'percent', 'lineinfo' ], [ 'cocstatus' ]]
+\    'right':[[ 'filetype', 'percent', 'lineinfo' ]]
 \   },
 \   'tabline': {
 \     'left': [['explorer_pad'], ['buffers']],
@@ -56,7 +56,6 @@ let g:lightline = {
 \     'readonly': 'LightlineReadonly',
 \     'modified': 'LightlineModified',
 \     'filetype': 'LightlineFiletype',
-\     'cocstatus': 'LightlineCoc',
 \   },
 \   'component_expand': {
 \     'buffers': 'lightline#bufferline#buffers',
@@ -72,14 +71,6 @@ let g:lightline = {
 function! s:trim(maxlen, str) abort
     let trimed = len(a:str) > a:maxlen ? a:str[0:a:maxlen] . '..' : a:str
     return trimed
-endfunction
-
-function! LightlineCoc() abort
-    if winwidth(0) < 60
-        return ''
-    endif
-
-    return coc#status()
 endfunction
 
 function! LightlinePercent() abort
