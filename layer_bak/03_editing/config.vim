@@ -1,4 +1,62 @@
 " **************************
+" Setting
+" **************************
+set autoindent smartindent
+set backspace=indent,eol,start
+set nomodeline
+set foldenable
+
+
+" Work nicely with the system clipboard
+" set clipboard=unnamedplus
+" Number formats, for incrementing
+set nrformats=alpha,octal,hex
+
+" Use a short timeout for incomplete mappings
+set ttimeout
+set ttimeoutlen=100
+
+" Highlight the current line
+set cursorline
+
+" Delete comment character(s) when joining commented lines
+set formatoptions+=j
+
+" Indent Guides
+" http://goo.gl/qfF9od
+" http://www.vim.org/scripts/script.php?script_id=3361
+let g:indent_guides_guide_size = 1
+setlocal colorcolumn=120
+" hi ColorColumn ctermbg=lightblue guibg=blue
+
+" https://github.com/matze/vim-move
+" Use g:move_key_modifier to set a custom modifier for key bindings. For example,
+" let g:move_key_modifier = 'C'
+" which will create the following key bindings:
+" <C-k>   Move current line/selections up
+" <C-j>   Move current line/selections down
+let g:move_key_modifier = 'C'
+
+" Search while typing
+set incsearch
+
+" Ignore case (but be smart)
+set ignorecase
+set smartcase
+
+" Ignore certain patterns while searching
+set wildignore+=target,out,build_debug,build_release,build
+set wildignore+=Library,*.csproject,*.meta
+set wildignore+=_site,vendor,node_modules
+set wildignore+=*.o,*.d,*.a,*.c3b,*.ccz,Resource,*.class,*.jar,*.strings,*.plist,*.filters
+set wildignore+=*.xcscheme,*.xcworkspacedata,*.xcscmblueprint,*.properties,*.keystore
+set wildignore+=boost_*,googletest,*.proto,protobuf,*.txt,Frameworks,*.framework
+set wildignore+=*.vcxitems,*.xib,*.nib,*.pbxproj,*.xcuserstate,*.props
+set wildignore+=*.apk,*.iml
+set wildignore+=*.ogg,*.wav,*.mp3,*.mid,*.png,*.jpg,*.jpeg
+
+
+" **************************
 " CTRLP settings
 " **************************
 " https://github.com/ctrlpvim/ctrlp.vim
