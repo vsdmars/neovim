@@ -1,4 +1,6 @@
 --[[
+Author: vsdmars vsdmars@gmail.com
+
 Neovim automatically adds a 'lua' folder, if present here, to be available to
 vim's runtimepath. This allows us to just refer the lua modules as we're doing
 below.
@@ -8,8 +10,9 @@ On top of this, we can also `require` a folder as long as it has an 'init.lua'
 inside the folder. Its the job of that 'init.lua' file to 'require' any other
 sub-modules inside the folder. I'm still unclear of what path we'll use inside
 of the 'foldder/init.lua' to include those sub-modules.
-]]
---
+]]--
+
+require("00_plugins")
 require("01_globals")
 require("02_options")
 --require("mappings")

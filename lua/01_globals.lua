@@ -40,6 +40,7 @@ VIM_LOOP = vim.loop
 VIM_OPT = vim.opt
 VIM_CMD = vim.cmd
 VIM_O = vim.o
+VIM_G = vim.g
 
 NOREMAP = { noremap = true }
 NOREMAP_SILENT = { noremap = true, silent = true }

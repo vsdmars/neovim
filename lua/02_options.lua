@@ -4,6 +4,33 @@ VIM_OPT.belloff = "all"
 -- silenced. This is most useful to specify specific events in insert mode to
 -- be silenced.
 -------------------------------------------------------------------------------
+VIM_OPT.compatible = false
+-- not compatible with the old-fashion vi mode
+VIM_OPT.hidden = true
+-- set buffer hidden
+VIM_OPT.exrc = true
+-- beware of potential security issues
+
+-- When secure is on, ":autocmd", shell and write commands are not allowed in
+-- .nvimrc" and ".exrc" in the current directory and map commands are
+-- displayed.
+VIM_OPT.secure = true
+-- go with set exrc
+
+VIM_G.hostname = vim.fn.hostname()
+VIM_G.python3_host_prog = "python3"
+
+VIM_CMD 'source $HOME/.config/nvim/layer/all-packages.vim'
+-- init. with vim script
+
+--[[
+https://vi.stackexchange.com/a/10125
+Same as:
+filetype on
+filetype plugin on
+filetype indent on
+this is NEEDED for auto completion to run ]]--
+VIM_API.nvim_command('filetype plugin indent on')
 
 vim.g.mapleader = ","
 vim.mapleader = ","
@@ -331,7 +358,7 @@ VIM_OPT.showmode = true
   :20  :  up to 20 lines of command-line history will be remembered
   %    :  saves and restores the buffer list
   n... :  where to save the viminfo files ]]--
-VIM_OPT.viminfo = "\'10,\"100,:20,%,n~/.viminfo"
+VIM_OPT.viminfo = vim.fn.expand("\'10,\"100,:20,%,n~/.viminfo")
 
 VIM_OPT.wildchar = ('\t'):byte()
 -- https://github.com/neovim/neovim/issues/18000
@@ -340,9 +367,9 @@ VIM_OPT.wildchar = ('\t'):byte()
 VIM_OPT.wildmenu = true
 -- wild char completion menu
 
-VIM_OPT.tm = 500  
+VIM_OPT.tm = 500
 -- Time in milliseconds to wait for a mapped sequence to complete.
-VIM_OPT.wmw = 0 
+VIM_OPT.wmw = 0
 -- set the min width of a window to 0 so we can maximize others
 VIM_OPT.wmh = 0
 -- set the min height of a window to 0 so we can maximize others
