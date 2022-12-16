@@ -39,10 +39,10 @@ https://github.com/junegunn/fzf.vim
 :Marks
 
 
-Search:
-https://github.com/dyng/ctrlsf.vim#quick-start
-:CtrlSF
-,* // search same word in file
+Leap:
+s forward search
+S backward search
+gs cross window search
 
 
 Move line:

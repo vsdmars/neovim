@@ -59,9 +59,13 @@ return packer.startup(function(use)
         }
     }
 
+    -- TUI
+    use("folke/zen-mode.nvim")
+
     -- Theme
     -- https://github.com/arcticicestudio/nord-vim
     use("arcticicestudio/nord-vim")
+    use("folke/lsp-colors.nvim")
 
     -- File management
     -- https://github.com/nvim-neo-tree/neo-tree.nvim
@@ -96,6 +100,11 @@ return packer.startup(function(use)
           }
         }
     }
+
+    -- Editing
+    -- https://github.com/ggandor/leap.nvim
+    use("ggandor/leap.nvim")
+
 
     if is_bootstrap then
         require('packer').sync()
