@@ -14,7 +14,8 @@ of the 'foldder/init.lua' to include those sub-modules.
 
 require("00_plugins")
 require("01_globals")
-require("02_options")
+require("02_functions")
+require("03_options")
 --require("mappings")
 --require("autocommands")
 --require("plugins")

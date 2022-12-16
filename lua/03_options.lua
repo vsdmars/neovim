@@ -34,6 +34,9 @@ VIM_API.nvim_command('filetype plugin indent on')
 
 vim.g.mapleader = ","
 vim.mapleader = ","
+
+vim.g.vimsyn_embed = "l"
+-- get Lua syntax highlighting inside .vim
 -------------------------------------------------------------------------------
 
 vim.wildmode = { "full", "longest", "lastused" }
