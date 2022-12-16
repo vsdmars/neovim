@@ -43,16 +43,13 @@ packer.init({
 
 return packer.startup(function(use)
     -- Libraries
-    -- nvim-lua/plenary.nvim
     use("nvim-lua/plenary.nvim")
-    -- nvim-lua/popup.nvim
     use("nvim-lua/popup.nvim")
-    -- lewis6991/impatient.nvim
     use("lewis6991/impatient.nvim")
+    use("stevearc/dressing.nvim")
 
     -- Package management
     use {
-        -- wbthomason/packer.nvim
         "wbthomason/packer.nvim",
         requires = { 
         "nvim-lua/plenary.nvim",
@@ -61,14 +58,18 @@ return packer.startup(function(use)
 
     -- TUI
     use("folke/zen-mode.nvim")
+    use("folke/twilight.nvim")
+    use {
+        'nvim-lualine/lualine.nvim',
+        requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+    }
+
 
     -- Theme
-    -- https://github.com/arcticicestudio/nord-vim
     use("arcticicestudio/nord-vim")
     use("folke/lsp-colors.nvim")
 
     -- File management
-    -- https://github.com/nvim-neo-tree/neo-tree.nvim
     use {
         "nvim-neo-tree/neo-tree.nvim",
         branch = "v2.x",
@@ -102,9 +103,38 @@ return packer.startup(function(use)
     }
 
     -- Editing
-    -- https://github.com/ggandor/leap.nvim
     use("ggandor/leap.nvim")
+    use('jinh0/eyeliner.nvim')
+    use('bkad/CamelCaseMotion')
+    -- use("preservim/nerdcommenter")
+    use("numToStr/Comment.nvim")
+    use("windwp/nvim-autopairs")
+    use("lukas-reineke/indent-blankline.nvim")
+    use("lukas-reineke/virt-column.nvim")
+    use({ "kylechui/nvim-surround", tag = "*" })
+    use("folke/todo-comments.nvim")
 
+    -- File format
+    use("avakhov/vim-yaml")
+    use("tmux-plugins/vim-tmux")
+    use("cespare/vim-toml")
+
+    -- LSP, Snippets, Completions
+    use({
+        "williamboman/mason.nvim",
+        "williamboman/mason-lspconfig.nvim",
+        "neovim/nvim-lspconfig",
+    })
+    use("jose-elias-alvarez/null-ls.nvim")
+    
+
+    -- Diagnostics
+    use {
+      "folke/trouble.nvim",
+      requires = "kyazdani42/nvim-web-devicons",
+      }
+
+    
 
     if is_bootstrap then
         require('packer').sync()

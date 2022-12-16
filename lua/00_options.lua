@@ -21,9 +21,6 @@ VIM_OPT.secure = true
 VIM_G.hostname = vim.fn.hostname()
 VIM_G.python3_host_prog = "python3"
 
-VIM_CMD 'source $HOME/.config/nvim/layer/all-packages.vim'
--- init. with vim script
-
 --[[
 https://vi.stackexchange.com/a/10125
 Same as:
@@ -31,7 +28,7 @@ filetype on
 filetype plugin on
 filetype indent on
 this is NEEDED for auto completion to run ]]--
-VIM_API.nvim_command('filetype plugin indent on')
+VIM_CMD('filetype plugin indent on')
 
 vim.g.mapleader = ","
 vim.mapleader = ","
@@ -411,6 +408,10 @@ VIM_OPT.colorcolumn = "120"
 VIM_CMD[[highlight OverLength ctermbg=red ctermfg=white guibg=red guifg=white]]
 VIM_CMD[[match OverLength /\%121v.\+/]]
 
+-- Color conceal characters nicely
+VIM_CMD[[hi Conceal guifg=green ctermfg=green]]
+VIM_OPT.conceallevel = 2
+
 
 -- Search while typing
 VIM_OPT.incsearch = true
@@ -425,5 +426,9 @@ VIM_OPT.wildignore = VIM_OPT.wildignore + "boost_*,googletest,*.proto,protobuf,*
 VIM_OPT.wildignore = VIM_OPT.wildignore + "*.vcxitems,*.xib,*.nib,*.pbxproj,*.xcuserstate,*.props"
 VIM_OPT.wildignore = VIM_OPT.wildignore + "*.apk,*.iml"
 VIM_OPT.wildignore = VIM_OPT.wildignore + "*.ogg,*.wav,*.mp3,*.mid,*.png,*.jpg,*.jpeg"
+-------------------------------------------------------------------------------
+
+VIM_CMD 'source $HOME/.config/nvim/layer/all-config.vim'
+-- init. with vim script
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
