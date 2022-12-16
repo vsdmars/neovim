@@ -4,6 +4,7 @@ VIM_OPT.belloff = "all"
 -- silenced. This is most useful to specify specific events in insert mode to
 -- be silenced.
 -------------------------------------------------------------------------------
+
 VIM_OPT.compatible = false
 -- not compatible with the old-fashion vi mode
 VIM_OPT.hidden = true
@@ -37,6 +38,8 @@ vim.mapleader = ","
 
 vim.g.vimsyn_embed = "l"
 -- get Lua syntax highlighting inside .vim
+
+VIM_O.syntax = true
 -------------------------------------------------------------------------------
 
 vim.wildmode = { "full", "longest", "lastused" }
@@ -352,7 +355,7 @@ VIM_OPT.ruler = true
 -- show the cursor position all the time
 VIM_OPT.showmatch = true
 -- Cursor shows matching ) and }
-VIM_OPT.showmode = true
+VIM_OPT.showmode = false
 -- Show current mode
 
 --[[ Tell vim to remember certain things when we exit
@@ -402,7 +405,12 @@ VIM_OPT.formatoptions = VIM_OPT.formatoptions + 'j'
 -- http://www.vim.org/scripts/script.php?script_id=3361
 -- let g:indent_guides_guide_size = 1
 VIM_OPT.colorcolumn = "120"
--- hi ColorColumn ctermbg=lightblue guibg=blue
+
+-- Highlight boundary
+-- Show overlength line in different color.
+VIM_CMD[[highlight OverLength ctermbg=red ctermfg=white guibg=red guifg=white]]
+VIM_CMD[[match OverLength /\%121v.\+/]]
+
 
 -- Search while typing
 VIM_OPT.incsearch = true

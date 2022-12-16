@@ -43,15 +43,6 @@ let g:strip_whitespace_on_save = 0
 
 
 " **************************
-" Nerdtree settings
-" **************************
-" https://github.com/scrooloose/nerdtree
-let g:NERDSpaceDelims = 1
-let g:NERDCompactSexyComs = 1
-let g:NERDTrimTrailingWhitespace = 1
-
-
-" **************************
 " BClose settings
 " **************************
 " https://github.com/rbgrouleff/bclose.vim
@@ -275,9 +266,6 @@ nnoremap <leader>S :ToggleWorkspace<CR>
 
 " Count word occurrences in a file
 map ,* *<C-O>:%s///gn<CR>
-
-" https://github.com/scrooloose/nerdtree
-" map <C-Z> :set go-=L \| set go+=l \| NERDTreeToggle<CR>
 
 " https://github.com/mbbill/undotree
 nnoremap <F6> :UndotreeToggle<cr>
