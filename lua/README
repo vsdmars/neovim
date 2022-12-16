@@ -1,5 +1,8 @@
 https://github.com/nanotee/nvim-lua-guide
 
-1. remove plug managed packages
-2. migrage to packer.lua
-3. lua code for loading config.vim
+1. remove plug managed packages - done
+2. migrage to packer.lua - done
+3. lua code for loading config.vim - done
+
+4. separate plugin config
+5. lsp setup {c++, Rust, python, lua}

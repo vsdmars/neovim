@@ -277,7 +277,7 @@ nnoremap <leader>S :ToggleWorkspace<CR>
 map ,* *<C-O>:%s///gn<CR>
 
 " https://github.com/scrooloose/nerdtree
-map <C-Z> :set go-=L \| set go+=l \| NERDTreeToggle<CR>
+" map <C-Z> :set go-=L \| set go+=l \| NERDTreeToggle<CR>
 
 " https://github.com/mbbill/undotree
 nnoremap <F6> :UndotreeToggle<cr>

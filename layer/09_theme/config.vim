@@ -35,22 +35,6 @@ set conceallevel=2
 
 
 " **************************
-" Function
-" **************************
-" Add a hook to patch the colorscheme
-function! FixColorscheme()
-  hi Pmenu guibg=#eee8d5 guifg=#586e75 gui=none
-  hi PmenuSel guibg=#859900 guifg=#586e75 gui=none
-endfunction
-
-
-augroup FixColorschemeSettings
-  au!
-  au ColorScheme * call FixColorscheme()
-augroup END
-
-
-" **************************
 " nord setting
 " **************************
 " getColorCode foreground|more
