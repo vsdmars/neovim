@@ -10,9 +10,20 @@ local lsp_handlers = require("lsp_config.lsp_handlers")
 local diagnostics = require("lsp_config.diagnostics")
 
 -- config file for clangd
-local root_files = {
-    "compile_commands.json",
-}
+-- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#clangd
+-- root_pattern(
+--           '.clangd',
+--           '.clang-tidy',
+--           '.clang-format',
+--           'compile_commands.json',
+--           'compile_flags.txt',
+--           'configure.ac',
+--           '.git'
+--         )
+--
+-- local root_files = {
+--     "compile_commands.json",
+-- }
 
 -- clangd specific key binding
 local set_mappings = function(_, bufnr)
@@ -33,9 +44,9 @@ local opts = {
         set_mappings(client, bufnr)
     end,
     capabilities = lsp_handlers.capabilities,
-    root_dir = function(fname)
-        return lspconfig_util.root_pattern(unpack(root_files))(fname)
-    end,
+    -- root_dir = function(fname)
+    --     return lspconfig_util.root_pattern(unpack(root_files))(fname)
+    -- end,
     single_file_support = false,
 }
 

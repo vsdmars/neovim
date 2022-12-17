@@ -58,6 +58,7 @@ diagnostics.setup()
 -- setup main language lsp under lsp_config/servers directory
 require("lsp_config.servers.clangd").setup()
 require("lsp_config.servers.sumneko_lua").setup()
+require("lsp_config.servers.rust_analyzer").setup()
 
 -- setup language lsp as general 
 local setup_lsp = function()

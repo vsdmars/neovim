@@ -48,6 +48,7 @@ return packer.startup(function(use)
     use("lewis6991/impatient.nvim")
     use("stevearc/dressing.nvim")
 
+
     -- Package management
     use {
         "wbthomason/packer.nvim",
@@ -55,6 +56,7 @@ return packer.startup(function(use)
         "nvim-lua/plenary.nvim",
         }
     }
+
 
     -- TUI
     use("folke/zen-mode.nvim")
@@ -64,9 +66,11 @@ return packer.startup(function(use)
         requires = { 'kyazdani42/nvim-web-devicons', opt = true }
     }
 
+
     -- Theme
     use("arcticicestudio/nord-vim")
     use("folke/lsp-colors.nvim")
+
 
     -- File management
     use {
@@ -101,6 +105,7 @@ return packer.startup(function(use)
         }
     }
 
+
     -- Editing
     use("ggandor/leap.nvim")
     use('jinh0/eyeliner.nvim')
@@ -113,10 +118,12 @@ return packer.startup(function(use)
     use({ "kylechui/nvim-surround", tag = "*" })
     use("folke/todo-comments.nvim")
 
+
     -- File format
     use("avakhov/vim-yaml")
     use("tmux-plugins/vim-tmux")
     use("cespare/vim-toml")
+
 
     -- LSP, Snippets, Completions
     use({
@@ -124,8 +131,20 @@ return packer.startup(function(use)
         "williamboman/mason-lspconfig.nvim",
         "neovim/nvim-lspconfig",
     })
+    use({'hrsh7th/cmp-nvim-lsp',
+         'hrsh7th/cmp-buffer',
+         'hrsh7th/cmp-path',
+         'hrsh7th/cmp-cmdline',
+         'hrsh7th/nvim-cmp'})
     use("jose-elias-alvarez/null-ls.nvim")
-    use("ray-x/lsp_signature.nvim")
+
+    use("ray-x/lsp_signature.nvim") -- show function signature
+    use("onsails/lspkind.nvim")
+    -- use("p00f/clangd_extensions.nvim")
+    
+
+    -- LSP DAP
+    use 'mfussenegger/nvim-dap'
     
 
     -- Diagnostics
@@ -134,7 +153,10 @@ return packer.startup(function(use)
       requires = "kyazdani42/nvim-web-devicons",
       }
 
-    
+
+    -- Snippets
+    use {'L3MON4D3/LuaSnip',
+         'saadparwaiz1/cmp_luasnip'}
 
     if is_bootstrap then
         require('packer').sync()
