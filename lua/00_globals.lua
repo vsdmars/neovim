@@ -273,6 +273,7 @@ VIM_GO = vim.go -- behaves like :let &g:{option-name}
 VIM_BO = vim.bo -- behaves like :let &l:{option-name} for buffer-local options
                 -- e.g. $ vim.bo[4].expandtab = true -- buffer 4
 VIM_WO = vim.wo -- behaves like :let &l:{option-name} for window-local options
+VIM_LSP = vim.lsp
 
 NOREMAP = { noremap = true }
 NOREMAP_SILENT = { noremap = true, silent = true }

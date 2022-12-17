@@ -64,7 +64,6 @@ return packer.startup(function(use)
         requires = { 'kyazdani42/nvim-web-devicons', opt = true }
     }
 
-
     -- Theme
     use("arcticicestudio/nord-vim")
     use("folke/lsp-colors.nvim")
@@ -126,6 +125,7 @@ return packer.startup(function(use)
         "neovim/nvim-lspconfig",
     })
     use("jose-elias-alvarez/null-ls.nvim")
+    use("ray-x/lsp_signature.nvim")
     
 
     -- Diagnostics
