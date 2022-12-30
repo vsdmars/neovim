@@ -7,6 +7,7 @@ if not ok then
 	end
 	return
 end
+OK_TELESCOPE = ok
 
 local open_with_trouble = nil
 
@@ -18,6 +19,7 @@ end
 local z_utils = require("telescope._extensions.zoxide.utils")
 local builtin = require("telescope.builtin")
 local extensions = tel.extensions
+TELESCOPE_BUILTIN = builtin
 
 tel.setup({
 	defaults = {

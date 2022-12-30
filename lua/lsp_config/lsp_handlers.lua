@@ -26,14 +26,10 @@ M.set_mappings = function(_, bufnr) -- (client, bufnr)
 	VIM_KEYMAP_SET({ "n" }, "<leader>gi", VIM_LSP.buf.implementation, opts)
 	VIM_KEYMAP_SET({ "n" }, "<leader>rn", VIM_LSP.buf.rename, opts)
 	VIM_KEYMAP_SET({ "n" }, "<leader>gf", VIM_LSP.buf.format, opts)
-	-- if OK_TELESCOPE then
-	--     vim.keymap.set(
-	--         { "n" },
-	--         "<leader>rf",
-	--         TELESCOPE_BUILTIN.lsp_references,
-	--         opts
-	--     )
-	-- end
+
+	if OK_TELESCOPE then
+		VIM_KEYMAP_SET({ "n" }, "<leader>rf", TELESCOPE_BUILTIN.lsp_references, opts)
+	end
 end
 
 M.set_autocmds = function(client, _) -- (client, bufnr)

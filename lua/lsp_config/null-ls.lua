@@ -58,5 +58,19 @@ null_ls.setup({
 
 		with_diagnostics_code(null_ls.builtins.diagnostics.shellcheck),
 	},
+	-- https://github.com/jose-elias-alvarez/null-ls.nvim/issues/428
+	on_init = function(new_client, _)
+		new_client.offset_encoding = "utf-8"
+	end,
 	on_attach = attach_fn,
 })
+
+-- https://github.com/jose-elias-alvarez/null-ls.nvim/issues/428
+local notify = vim.notify
+vim.notify = function(msg, ...)
+	if msg:match("warning: multiple different client offset_encodings") then
+		return
+	end
+
+	notify(msg, ...)
+end
