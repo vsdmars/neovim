@@ -12,7 +12,7 @@ let &wig = ""  " clear wig option
 for l in layers
     " Load each layer's config
     let s:config = l . '/config.vim'
-    
+
     if filereadable(s:config)
         exe "source" s:config
     endif
