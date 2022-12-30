@@ -428,7 +428,7 @@ VIM_OPT.wildignore = VIM_OPT.wildignore + "*.apk,*.iml"
 VIM_OPT.wildignore = VIM_OPT.wildignore + "*.ogg,*.wav,*.mp3,*.mid,*.png,*.jpg,*.jpeg"
 -------------------------------------------------------------------------------
 
-VIM_CMD("source $HOME/.config/nvim/layer/all-config.vim")
+VIM_CMD("source $HOME/.config/nvim/config/all-config.vim")
 -- init. with vim script
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
