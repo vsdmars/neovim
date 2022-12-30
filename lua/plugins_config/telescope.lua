@@ -22,7 +22,8 @@ local extensions = tel.extensions
 tel.setup({
 	defaults = {
 		prompt_prefix = " ",
-		selection_caret = "📌 ",
+		-- selection_caret = "📌 ",
+		selection_caret = "👉 ",
 		path_display = { "smart" },
 		history = {
 			path = "~/.telescope_history.sqlite3",
