@@ -105,7 +105,7 @@ end, NOREMAP_SILENT)
 VIM_KEYMAP_SET({ "n" }, "<leader>ft", function()
 	builtin.builtin()
 end, NOREMAP_SILENT)
-VIM_KEYMAP_SET({ "n" }, "<C-_>", function()
+VIM_KEYMAP_SET({ "n" }, "<leader>ffb", function()
 	builtin.current_buffer_fuzzy_find({
 		previewer = false,
 		skip_empty_lines = true,
