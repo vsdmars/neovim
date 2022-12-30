@@ -10,12 +10,13 @@ On top of this, we can also `require` a folder as long as it has an 'init.lua'
 inside the folder. Its the job of that 'init.lua' file to 'require' any other
 sub-modules inside the folder. I'm still unclear of what path we'll use inside
 of the 'foldder/init.lua' to include those sub-modules.
-]]--
+]]
+--
 
 require("00_plugins")
-require("00_globals")
-require("00_functions")
-require("00_options")
+require("01_globals")
+require("02_functions")
+require("03_options")
 require("plugins_config")
 require("lsp_config")
 --require("mappings")

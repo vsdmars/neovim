@@ -5,7 +5,7 @@
 " if directory under layer starts with '_' will not be used.
 " http://learnvimscriptthehardway.stevelosh.com/chapters/19.html
 let &wig = "_*"  " set wig option to _*
-let layers = globpath("~/.config/nvim/layer", "*", 0, 1)
+let layers = globpath("~/.config/nvim/config", "*", 0, 1)
 let &wig = ""  " clear wig option
 
 " load vimscrip config
