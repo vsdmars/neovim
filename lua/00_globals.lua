@@ -12,7 +12,8 @@ plugin/
 syntax/
 
 * in a runtime directory, all *.vim files are sourced before *.lua files.
-]]--
+]]
+--
 
 -- :help lua-vim
 -- :help vim.pretty_print())
@@ -119,13 +120,12 @@ syntax/
 --
 -- e.g.
 -- vim.g.some_global_variable = {
-    -- key1 = 'value',
-    -- key2 = 300
+-- key1 = 'value',
+-- key2 = 300
 -- }
 -- vim.g.some_global_variable = nil
 -- Some variable names may contain characters that cannot be used for identifiers in Lua. You can still manipulate these variables by using this syntax: vim.g['my#variable'].
 -- :help lua-vim-variables
-
 
 -- Calling Vimscript functions https://github.com/nanotee/nvim-lua-guide#calling-vimscript-functions
 -- e.g.
@@ -138,13 +138,12 @@ syntax/
 -- It is distinct from vim.api.nvim_call_function in that converting Vim/Lua objects is automatic: vim.api.nvim_call_function returns a table for floating point numbers and does not accept Lua closures while vim.fn handles these types transparently.
 -- :help vim.fn
 
-
 -- :help vim-function for an alphabetical list and
 -- :help function-list for a list of functions grouped by topic.
 
 -- In Lua only false and nil are considered falsy, numbers always evaluate to true no matter their value. You have to explicitly check for 1 or 0:
 -- if vim.fn.has('nvim') == 1 then
-    -- do something...
+-- do something...
 -- end
 
 -- Define mappings https://github.com/nanotee/nvim-lua-guide#defining-mappings
@@ -171,11 +170,11 @@ syntax/
 -- $ vim.cmd('Upper hello world') -- prints "HELLO WORLD"
 -- OR command as a Lua function callback:
 -- vim.api.nvim_create_user_command(
-    -- 'Upper',
-    -- function(opts)
-        -- print(string.upper(opts.args))
-    -- end,
-    -- { nargs = 1 }
+-- 'Upper',
+-- function(opts)
+-- print(string.upper(opts.args))
+-- end,
+-- { nargs = 1 }
 -- )
 -- Two additional attributes are available:
 --   desc allows you to control what gets displayed when you run :command {cmd} on a command defined as a Lua callback. Similarly to keymaps, it is recommended to add a desc key to commands defined as Lua functions.
@@ -210,7 +209,6 @@ syntax/
 
 -------------------------------------------------------------------------------
 
-
 -- vimscript to lua
 -- luaeval() takes an optional second argument that allows you to pass data to the expression. You can then access that data from Lua using the magic global _A:
 -- $ echo luaeval('_A[1] + _A[2]', [1, 1])
@@ -219,43 +217,45 @@ syntax/
 -- " 'Lua is awesome'
 -------------------------------------------------------------------------------
 
-function _G.put(...)
-  local objects = {}
-  for i = 1, select('#', ...) do
-    local v = select(i, ...)
-    table.insert(objects, vim.inspect(v))
-  end
+-- PUT is a global function that print lua object in readable format.
+function _G.PUT(...)
+	local objects = {}
+	for i = 1, select("#", ...) do
+		local v = select(i, ...)
+		table.insert(objects, vim.inspect(v))
+	end
 
-  print(table.concat(objects, '\n'))
-  return ...
+	print(table.concat(objects, "\n"))
+	return ...
 end
 
 -- load https://github.com/nvim-lua/plenary.nvim
 -- reload the Lua module instead of the cached ones.
 local ok, plenary_reload = pcall(require, "plenary.reload")
 if not ok then
-    reloader = require
+	reloader = require
 else
-    reloader = plenary_reload.reload_module
+	reloader = plenary_reload.reload_module
 end
 -------------------------------------------------------------------------------
-
 RELOAD = function(...)
-    return reloader(...)
+	return reloader(...)
 end
 -------------------------------------------------------------------------------
-
+-- R is used for reloading lua pacakge.
 function _G.R(name)
-    RELOAD(name)
-    return require(name)
+	RELOAD(name)
+	return require(name)
 end
+
 -------------------------------------------------------------------------------
--- The function is called `tcodes` for `termcodes`.
+-- tcodes is used for setting termcodes.
 -- You don't have to call it that, but I find the terseness convenient
 function _G.tcodes(str)
-    -- Adjust boolean arguments as needed
-    return vim.api.nvim_replace_termcodes(str, true, true, true)
+	-- Adjust boolean arguments as needed
+	return vim.api.nvim_replace_termcodes(str, true, true, true)
 end
+
 -- print(tcodes'<Tab>')
 -------------------------------------------------------------------------------
 
@@ -267,14 +267,15 @@ VIM_OPT = vim.opt -- behaves like :set
 VIM_GOPT = vim.opt_global -- behaves like :setglobal
 VIM_LOPT = vim.opt_local -- behaves like :setlocal
 VIM_CMD = vim.cmd -- behaves like vim.api.nvim_exec()
-VIM_G = vim.g
+VIM_G = vim.g -- Global (g:) editor variables.
 VIM_O = vim.o -- behaves like :let &{option-name}
-VIM_GO = vim.go -- behaves like :let &g:{option-name}
+VIM_GO = vim.go -- behaves like :let &g:{option-name}, Get or set global options. Like :setglobal
 VIM_BO = vim.bo -- behaves like :let &l:{option-name} for buffer-local options
-                -- e.g. $ vim.bo[4].expandtab = true -- buffer 4
+-- e.g. $ vim.bo[4].expandtab = true -- buffer 4
 VIM_WO = vim.wo -- behaves like :let &l:{option-name} for window-local options
 VIM_LSP = vim.lsp
 
+-- syntax sugar
 NOREMAP = { noremap = true }
 NOREMAP_SILENT = { noremap = true, silent = true }
-PLUGIN_MISSING_NOTIFY = false
+PLUGIN_MISSING_NOTIFY = true

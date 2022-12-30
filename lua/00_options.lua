@@ -27,8 +27,9 @@ Same as:
 filetype on
 filetype plugin on
 filetype indent on
-this is NEEDED for auto completion to run ]]--
-VIM_CMD('filetype plugin indent on')
+this is NEEDED for auto completion to run ]]
+--
+VIM_CMD("filetype plugin indent on")
 
 vim.g.mapleader = ","
 vim.mapleader = ","
@@ -166,13 +167,13 @@ VIM_OPT.swapfile = false
 -------------------------------------------------------------------------------
 
 VIM_OPT.fillchars = {
-    horiz = "━",
-    horizup = "┻",
-    horizdown = "┳",
-    vert = "┃",
-    vertleft = "┫",
-    vertright = "┣",
-    verthoriz = "╋",
+	horiz = "━",
+	horizup = "┻",
+	horizdown = "┳",
+	vert = "┃",
+	vertleft = "┫",
+	vertright = "┣",
+	verthoriz = "╋",
 }
 -- Characters to fill the statuslines and vertical separators
 -------------------------------------------------------------------------------
@@ -262,10 +263,10 @@ VIM_OPT.backspace = { "eol", "start", "indent" }
 -------------------------------------------------------------------------------
 
 VIM_OPT.whichwrap = VIM_OPT.whichwrap
-    + "<" -- <   <Left>    Normal and Visual
-    + ">" -- >   <Right>   Normal and Visual
-    + "h" -- h   "h"       Normal and Visual (not recommended)
-    + "l" -- l   "l"       Normal and Visual (not recommended)
+	+ "<" -- <   <Left>    Normal and Visual
+	+ ">" -- >   <Right>   Normal and Visual
+	+ "h" -- h   "h"       Normal and Visual (not recommended)
+	+ "l" -- l   "l"       Normal and Visual (not recommended)
 -- This was from my vimrc. I don't really know why these are there though.
 -- The docs now say "h" and "l" are not recommended.
 -------------------------------------------------------------------------------
@@ -276,31 +277,31 @@ VIM_OPT.list = true
 -- tabs and spaces and for trailing blanks. Further changed by
 -- set listchars=tab:»·,trail:·,extends:↪,precedes:↩
 VIM_OPT.listchars = {
-    tab = "»·",
-    trail = "·",
-    extends = "↪",
-    precedes = "↩",
+	tab = "»·",
+	trail = "·",
+	extends = "↪",
+	precedes = "↩",
 }
 -------------------------------------------------------------------------------
 
 VIM_OPT.shada = {
-    "!", -- When included, save and restore global variables that start
-    -- with an uppercase letter, and don't contain a lowercase
-    -- letter.  Thus "KEEPTHIS and "K_L_M" are stored, but "KeepThis"
-    -- and "_K_L_M" are not.  Nested List and Dict items may not be
-    -- read back correctly, you end up with an empty item.
-    "'1000",
-    -- Maximum number of previously edited files for which the marks
-    -- are remembered.  This parameter must always be included when
-    -- 'shada' is non-empty.
-    -- Including this item also means that the |jumplist| and the
-    -- |changelist| are stored in the shada file.
-    "<50", -- Maximum number of lines saved for each register.  If zero then
-    -- registers are not saved.  When not included, all lines are
-    "s100",
-    -- Maximum size of an item contents in KiB.
-    "h", -- Disable the effect of 'hlsearch' when loading the shada
-    -- file. When not included, it depends on whether ":nohlsearch"
+	"!", -- When included, save and restore global variables that start
+	-- with an uppercase letter, and don't contain a lowercase
+	-- letter.  Thus "KEEPTHIS and "K_L_M" are stored, but "KeepThis"
+	-- and "_K_L_M" are not.  Nested List and Dict items may not be
+	-- read back correctly, you end up with an empty item.
+	"'1000",
+	-- Maximum number of previously edited files for which the marks
+	-- are remembered.  This parameter must always be included when
+	-- 'shada' is non-empty.
+	-- Including this item also means that the |jumplist| and the
+	-- |changelist| are stored in the shada file.
+	"<50", -- Maximum number of lines saved for each register.  If zero then
+	-- registers are not saved.  When not included, all lines are
+	"s100",
+	-- Maximum size of an item contents in KiB.
+	"h", -- Disable the effect of 'hlsearch' when loading the shada
+	-- file. When not included, it depends on whether ":nohlsearch"
 }
 -- If you exit Vim and later start it again, you would normally lose a lot of
 -- information.  The ShaDa file can be used to remember that information, which
@@ -345,7 +346,8 @@ VIM_OPT.visualbell = false
 
 --[[ Nvim does not have special t_XX options nor <t_XX> keycodes to configure
      terminal capabilities. Instead Nvim treats the terminal as any other UI,
-     e.g. 'guicursor' sets the terminal cursor style if possible. ]]--
+     e.g. 'guicursor' sets the terminal cursor style if possible. ]]
+--
 -- VIM_OPT.t_vb = nil
 
 VIM_OPT.ruler = true
@@ -360,10 +362,11 @@ VIM_OPT.showmode = false
   "100 :  will save up to 100 lines for each register
   :20  :  up to 20 lines of command-line history will be remembered
   %    :  saves and restores the buffer list
-  n... :  where to save the viminfo files ]]--
-VIM_OPT.viminfo = vim.fn.expand("\'10,\"100,:20,%,n~/.viminfo")
+  n... :  where to save the viminfo files ]]
+--
+VIM_OPT.viminfo = vim.fn.expand("'10,\"100,:20,%,n~/.viminfo")
 
-VIM_OPT.wildchar = ('\t'):byte()
+VIM_OPT.wildchar = ("\t"):byte()
 -- https://github.com/neovim/neovim/issues/18000
 -- wild char completion menu
 
@@ -395,23 +398,20 @@ VIM_OPT.ttimeoutlen = 100
 VIM_OPT.cursorline = true
 
 -- Delete comment character(s) when joining commented lines
-VIM_OPT.formatoptions = VIM_OPT.formatoptions + 'j'
+VIM_OPT.formatoptions = VIM_OPT.formatoptions + "j"
 
 -- Indent Guides
--- http://goo.gl/qfF9od
--- http://www.vim.org/scripts/script.php?script_id=3361
--- let g:indent_guides_guide_size = 1
-VIM_OPT.colorcolumn = "120"
+VIM_OPT.colorcolumn = "80"
+VIM_CMD([[highlight ColorColumn ctermbg=0 guibg=lightgrey]])
 
 -- Highlight boundary
 -- Show overlength line in different color.
-VIM_CMD[[highlight OverLength ctermbg=red ctermfg=white guibg=red guifg=white]]
-VIM_CMD[[match OverLength /\%121v.\+/]]
+-- VIM_CMD([[highlight OverLength ctermbg=red ctermfg=white guibg=red guifg=white]])
+-- VIM_CMD([[match OverLength /\%121v.\+/]])
 
 -- Color conceal characters nicely
-VIM_CMD[[hi Conceal guifg=green ctermfg=green]]
+VIM_CMD([[hi Conceal guifg=green ctermfg=green]])
 VIM_OPT.conceallevel = 2
-
 
 -- Search while typing
 VIM_OPT.incsearch = true
@@ -428,7 +428,7 @@ VIM_OPT.wildignore = VIM_OPT.wildignore + "*.apk,*.iml"
 VIM_OPT.wildignore = VIM_OPT.wildignore + "*.ogg,*.wav,*.mp3,*.mid,*.png,*.jpg,*.jpeg"
 -------------------------------------------------------------------------------
 
-VIM_CMD 'source $HOME/.config/nvim/layer/all-config.vim'
+VIM_CMD("source $HOME/.config/nvim/layer/all-config.vim")
 -- init. with vim script
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------

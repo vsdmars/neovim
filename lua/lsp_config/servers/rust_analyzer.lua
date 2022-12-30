@@ -10,20 +10,18 @@ local diagnostics = require("lsp_config.diagnostics")
 -- root_pattern("Cargo.toml", "rust-project.json")
 
 local opts = {
-    on_attach = function(client, bufnr)
-        lsp_handlers.set_mappings(client, bufnr)
-        lsp_handlers.set_autocmds(client, bufnr)
-        lsp_handlers.set_additional_plugins(client, bufnr)
-        diagnostics.set_mappings(client, bufnr)
-        set_mappings(client, bufnr)
-    end,
-    capabilities = lsp_handlers.capabilities,
-    single_file_support = false,
+	on_attach = function(client, bufnr)
+		lsp_handlers.set_mappings(client, bufnr)
+		lsp_handlers.set_autocmds(client, bufnr)
+		lsp_handlers.set_additional_plugins(client, bufnr)
+		diagnostics.set_mappings(client, bufnr)
+	end,
+	capabilities = lsp_handlers.capabilities,
+	single_file_support = false,
 }
 
-
 M.setup = function()
-    lspconfig.rust_analyzer.setup(opts)
+	lspconfig.rust_analyzer.setup(opts)
 end
 
 return M

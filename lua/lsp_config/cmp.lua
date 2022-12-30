@@ -15,6 +15,12 @@ require("luasnip/loaders/from_vscode").lazy_load()
 
 local lspkind = require("lsp_config.lspkind")
 
+local has_words_before = function()
+	unpack = unpack or table.unpack
+	local line, col = unpack(vim.api.nvim_win_get_cursor(0))
+	return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
+end
+
 cmp.setup({
 	snippet = {
 		expand = function(args)
@@ -27,13 +33,12 @@ cmp.setup({
 				cmp.select_next_item()
 			elseif luasnip.expand_or_jumpable() then
 				luasnip.expand_or_jump()
-				-- elseif has_words_before() then
-				-- 	cmp.complete()
+			elseif has_words_before() then
+				cmp.complete()
 			else
 				fallback()
 			end
-		end, { "i", "c" }),
-
+		end, { "i", "s" }),
 		["<S-Tab>"] = cmp.mapping(function(fallback)
 			if cmp.visible() then
 				cmp.select_prev_item()
@@ -42,9 +47,7 @@ cmp.setup({
 			else
 				fallback()
 			end
-		end, { "i", "c" }),
-		-- ["<TAB>"] = cmp.mapping(cmp.mapping.select_next_item(), { "i", "c" }),
-		-- ["<S-Tab>"] = cmp.mapping(cmp.mapping.select_prev_item(), { "i", "c" }),
+		end, { "i", "s" }),
 		["<C-d>"] = cmp.mapping(cmp.mapping.scroll_docs(4), { "i", "c" }),
 		["<C-u>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), { "i", "c" }),
 		["<Cr>"] = cmp.mapping(cmp.mapping.confirm({ select = false }), { "i", "c" }),
