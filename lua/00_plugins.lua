@@ -60,7 +60,6 @@ return packer.startup(function(use)
 	})
 
 	-- TUI
-	use("folke/zen-mode.nvim")
 	use("folke/twilight.nvim")
 	use({
 		"nvim-lualine/lualine.nvim",
@@ -68,6 +67,7 @@ return packer.startup(function(use)
 	})
 
 	-- Theme
+	use("folke/zen-mode.nvim") -- not setup yet
 	use("arcticicestudio/nord-vim")
 	use("folke/lsp-colors.nvim")
 	use({
@@ -192,7 +192,7 @@ return packer.startup(function(use)
 	use("nvim-telescope/telescope-media-files.nvim")
 	use({ "nvim-telescope/telescope-frecency.nvim", requires = { "kkharji/sqlite.lua" } })
 	use("nvim-telescope/telescope-dap.nvim")
-	-- use("nvim-telescope/telescope-packer.nvim")
+	use("nvim-telescope/telescope-packer.nvim")
 	use("nvim-telescope/telescope-symbols.nvim")
 	use("benfowler/telescope-luasnip.nvim")
 	use({

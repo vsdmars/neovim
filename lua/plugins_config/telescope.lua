@@ -9,6 +9,7 @@ if not ok then
 end
 
 local open_with_trouble = nil
+
 local ok_trouble, trouble = pcall(require, "trouble")
 if ok_trouble then
 	open_with_trouble = trouble.open_with_trouble
@@ -23,7 +24,10 @@ tel.setup({
 		prompt_prefix = " ",
 		selection_caret = "📌 ",
 		path_display = { "smart" },
-
+		history = {
+			path = "~/.telescope_history.sqlite3",
+			limit = 100,
+		},
 		mappings = {
 			i = { ["<C-t>"] = open_with_trouble },
 			n = { ["<C-t>"] = open_with_trouble },
@@ -59,7 +63,7 @@ tel.setup({
 	},
 })
 
--- Load the extension
+-- -- Load the extension
 tel.load_extension("dap")
 tel.load_extension("file_browser")
 -- https://github.com/nvim-telescope/telescope-frecency.nvim
@@ -67,7 +71,7 @@ tel.load_extension("file_browser")
 tel.load_extension("fzf")
 tel.load_extension("luasnip")
 tel.load_extension("media_files")
--- tel.load_extension("packer")
+tel.load_extension("packer")
 tel.load_extension("smart_history")
 tel.load_extension("zoxide")
 
@@ -137,43 +141,43 @@ VIM_KEYMAP_SET({ "n" }, "<leader>fev", function()
 end, NOREMAP_SILENT)
 
 -- Chezmoi
-VIM_KEYMAP_SET({ "n" }, "<leader>fzc", function()
-	builtin.find_files({
-		cwd = "~/.local/share/chezmoi/",
-	})
-end, NOREMAP_SILENT)
-VIM_KEYMAP_SET({ "n" }, "<leader>fec", function()
-	extensions.file_browser.file_browser({
-		path = "~/.local/share/chezmoi/",
-		cwd_to_path = true,
-	})
-end, NOREMAP_SILENT)
+-- VIM_KEYMAP_SET({ "n" }, "<leader>fzc", function()
+-- 	builtin.find_files({
+-- 		cwd = "~/.local/share/chezmoi/",
+-- 	})
+-- end, NOREMAP_SILENT)
+-- VIM_KEYMAP_SET({ "n" }, "<leader>fec", function()
+-- 	extensions.file_browser.file_browser({
+-- 		path = "~/.local/share/chezmoi/",
+-- 		cwd_to_path = true,
+-- 	})
+-- end, NOREMAP_SILENT)
 
 -- Journal
-VIM_KEYMAP_SET({ "n" }, "<leader>fzj", function()
-	builtin.find_files({
-		cwd = "~/code/notes/journal/journal/",
-	})
-end, NOREMAP_SILENT)
-VIM_KEYMAP_SET({ "n" }, "<leader>fej", function()
-	extensions.file_browser.file_browser({
-		path = "~/code/notes/journal/journal/",
-		cwd_to_path = true,
-	})
-end, NOREMAP_SILENT)
+-- VIM_KEYMAP_SET({ "n" }, "<leader>fzj", function()
+-- 	builtin.find_files({
+-- 		cwd = "~/code/notes/journal/journal/",
+-- 	})
+-- end, NOREMAP_SILENT)
+-- VIM_KEYMAP_SET({ "n" }, "<leader>fej", function()
+-- 	extensions.file_browser.file_browser({
+-- 		path = "~/code/notes/journal/journal/",
+-- 		cwd_to_path = true,
+-- 	})
+-- end, NOREMAP_SILENT)
 
 -- Chezmoi
-VIM_KEYMAP_SET({ "n" }, "<leader>fzn", function()
-	builtin.find_files({
-		cwd = "~/code/notes/notebook/notebook",
-	})
-end, NOREMAP_SILENT)
-VIM_KEYMAP_SET({ "n" }, "<leader>fen", function()
-	extensions.file_browser.file_browser({
-		path = "~/code/notes/notebook/notebook/",
-		cwd_to_path = true,
-	})
-end, NOREMAP_SILENT)
+-- VIM_KEYMAP_SET({ "n" }, "<leader>fzn", function()
+-- 	builtin.find_files({
+-- 		cwd = "~/code/notes/notebook/notebook",
+-- 	})
+-- end, NOREMAP_SILENT)
+-- VIM_KEYMAP_SET({ "n" }, "<leader>fen", function()
+-- 	extensions.file_browser.file_browser({
+-- 		path = "~/code/notes/notebook/notebook/",
+-- 		cwd_to_path = true,
+-- 	})
+-- end, NOREMAP_SILENT)
 
 -- Extensions
 VIM_KEYMAP_SET({ "n" }, "<leader>fq", function()

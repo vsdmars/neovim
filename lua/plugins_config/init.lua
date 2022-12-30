@@ -23,6 +23,8 @@ require("plugins_config.whitespace")
 
 require("plugins_config.luasnip")
 
-require("plugins_config.telescope")
-require("plugins_config.trouble")
 require("plugins_config.nvim-treesitter")
+require("plugins_config.trouble")
+require("plugins_config.telescope")
+
+require("plugins_config.diffview")
