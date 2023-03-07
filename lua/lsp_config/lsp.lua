@@ -32,7 +32,7 @@ end
 -- https://github.com/williamboman/mason-lspconfig.nvim#available-lsp-servers
 mason_conf.setup({
 	-- ensure_installed = { "jsonls", "vimls", "taplo", "dockerls", "neocmake", "sumneko_lua", "rust_analyzer", "clangd", "pyright" },
-	ensure_installed = { "sumneko_lua", "rust_analyzer", "clangd", "pyright" },
+	ensure_installed = { "lua_ls", "rust_analyzer", "clangd", "pyright" },
 	automatic_installation = true,
 })
 --[[ mason_conf.setup_handlers {
@@ -56,7 +56,7 @@ diagnostics.setup()
 
 -- setup main language lsp under lsp_config/servers directory
 require("lsp_config.servers.clangd").setup()
-require("lsp_config.servers.sumneko_lua").setup()
+require("lsp_config.servers.lua_ls").setup()
 require("lsp_config.servers.rust_analyzer").setup()
 
 -- setup language lsp as general
