@@ -1,3 +1,6 @@
+# OBSOLETE, please refer to my new config based on lazyvim
+[neovim config based on lazyvim](https://github.com/vsdmars/nvim_config)
+
 # vimrc
 
 ## Installing and updating packages
